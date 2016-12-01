@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, except: [:create, :new]
+  before_action :authorize, except: [:create, :new, :twitter]
   # GET /users
   # GET /users.json
   def index
@@ -68,6 +68,7 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
