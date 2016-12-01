@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-TwitterDatum.delete_all
-User.delete_all
+TwitterDatum.destroy_all
+User.destroy_all
 
 user_list = [
-  ['Bobby', 'Bobson', 'bob@email.com', 'asdf', 'fishing', 'Ambassador', 'Bob likes to fish!'],
-  ['Suzy', 'Snowflake', 'suzy@email.com', 'asdf', 'foodie', 'Ambassador', 'Suzy likes to eat!'],
-  ['Richard', 'Richardson', 'rich@email.com', 'asdf', 'surfing', 'Ambassador', 'Rich loves the water!'],
-  ['Fishing Gear Inc', 'a', 'info@fishinggear.com', 'asdf', 'b', 'Brand', 'We need you to catch fish in our gear!'],
-  ['Good Food Inc', 'a', 'info@goodfood.com', 'asdf', 'b', 'Brand', 'Eat our food & take lots of pics!']
+  ['Carmen', 'Barron', 'carmen@email.com', 'asdf', 'fishing', 'Ambassador', 'Carmen likes to fish!'],
+  ['Nigell', 'King', 'nigell@email.com', 'asdf', 'foodie', 'Ambassador', 'Nigell likes to eat!'],
+  ['Paul', 'Schoen', 'paul@email.com', 'asdf', 'surfing', 'Ambassador', 'Paul loves the water!'],
+  ['Fishing Gear Inc', '(brand)', 'info@fishinggear.com', 'asdf', '(brand)', 'Brand', 'We need you to catch fish in our gear!'],
+  ['Good Food Inc', '(brand)', 'info@goodfood.com', 'asdf', '(brand)', 'Brand', 'Eat our food & take lots of pics!']
 ]
 
 user_list.each do |first_name, last_name, email, password, category, kind, summary|
