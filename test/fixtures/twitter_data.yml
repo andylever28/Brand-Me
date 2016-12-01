@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  screen_name: MyString
+  created_at: 2016-11-30
+  followers_count: 1
+  statuses_count: 1
+  id_str: MyString
+  last_status: MyText
+  user: one
+
+two:
+  screen_name: MyString
+  created_at: 2016-11-30
+  followers_count: 1
+  statuses_count: 1
+  id_str: MyString
+  last_status: MyText
+  user: two
