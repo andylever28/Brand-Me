@@ -13,6 +13,10 @@
 <% if current_user %>
 Logged in as <%= current_user.email %>.
 <%= link_to "Log Out", logout_path %>
+<%= link_to "Home", current_user %>
+  <% if current_user.kind == "Brand" %>
+  <%= link_to "Search", users_path %>
+  <% end %>
 <% else %>
 <%= link_to "Log In", login_path %>
 <% end %>
