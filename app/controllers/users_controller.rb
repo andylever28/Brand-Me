@@ -4,14 +4,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @social = TwitterDatum.all.order(followers_count: :desc)
-    @users = []
-    @social.each do |stat|
-      @users << User.find(stat.user_id)
-    end
+    # @social = TwitterDatum.all.order(followers_count: :desc)
+    # @users = []
+    # @social.each do |stat|
+    #   @users << User.find(stat.user_id)
+    # end
 
-    puts @users
-
+    # puts @users
+    @users = User.includes(:twitter_datum).order('twitter_data.followers_count')
   end
 
   # GET /users/1
