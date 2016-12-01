@@ -1,5 +1,8 @@
 <h1>New User</h1>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Back', users_path %>
+<% if params[:kind] == "Brand" %> 
+<%= render 'form_brand', user: @user %> <!-- #renders if user signup is for Brand -->
+<% else %>
+<%= render 'form', user: @user %> <!-- #renders if user signup is Ambassador -->
+<% end %>
+<%= link_to 'Home', root_path %>
