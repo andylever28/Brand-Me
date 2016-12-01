@@ -8,7 +8,9 @@ class User < ApplicationRecord
   validates :category, presence: true
   validates :kind, presence: true
 
+  # Not sure what this does.  It came from following Stefan's tutorial...
   def to_s
     "#{first_name} #{last_name}"
   end
+
 end

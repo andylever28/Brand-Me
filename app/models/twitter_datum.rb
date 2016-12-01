@@ -1,7 +1,8 @@
 class TwitterDatum < ApplicationRecord
   belongs_to :user
 
-  def make_them_tweet
+  def proof_tweet
+    @tweet_string = "blahblah"
     # generate random string for user to tweet, and give it to them in some rendered view
     # make them click "done!" once they've tweeted, so that we can THEN run the API
   end
