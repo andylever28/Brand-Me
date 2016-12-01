@@ -12,12 +12,6 @@ class UsersController < ApplicationController
 
     puts @users
 
-
-    # @users.each do |user|
-    #   user.twitter_datum.each do |follow|
-    #     follow.followers_count
-    #   end
-    # end
   end
 
   # GET /users/1
