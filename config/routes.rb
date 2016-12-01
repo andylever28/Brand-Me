@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :users
+  resources :users do
+  resources :twitter_datum
+end
 
   get 'page/home'
   root 'page#home'

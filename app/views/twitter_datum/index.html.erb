@@ -1,0 +1,9 @@
+<% @twitter.each do |stats| %>
+<%= stats.screen_name %> 
+<%= stats.created_at %>
+<%= stats.followers_count %>
+<%= stats.statuses_count %>
+<%= stats.id_str %>
+<%= stats.last_status %>
+<%= stats.updated_at %>
+<% end %>
