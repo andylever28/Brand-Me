@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+TwitterDatum.delete_all
 User.delete_all
 
 user_list = [
@@ -18,4 +19,22 @@ user_list = [
 
 user_list.each do |first_name, last_name, email, password, category, kind, summary|
   User.create(first_name: first_name, last_name: last_name, email: email, password: password, category: category, kind: kind, summary: summary)
+end
+
+  id_array = []
+
+User.all.each do |user|
+  id_array << user.id
+end
+
+twitter_info = [
+  ["carmenb162", "Fri Jun 21 16:02:21 +0000 2013", "50", "55", "34234", "hi!", id_array[0]],
+  ["potus", "Fri Jun 21 16:02:21 +0000 2013", "50", "55", "34234", "hi!", id_array[1]],
+  ["poetus", "Fri Jun 21 16:02:21 +0000 2013", "50", "55", "34234", "hi!", id_array[2]],
+  ["wynncode", "Fri Jun 21 16:02:21 +0000 2013", "50", "55", "34234", "hi!", id_array[3]]
+]
+
+twitter_info.each do |screen_name, created_at, followers_count, statuses_count, id_str, last_status, user_id|
+  TwitterDatum.create(screen_name: screen_name, created_at: created_at, followers_count: followers_count, statuses_count: statuses_count, id_str: id_str, last_status: last_status, user_id: user_id)
+
 end
