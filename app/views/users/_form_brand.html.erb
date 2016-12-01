@@ -12,7 +12,6 @@
       </ul>
     </div>
   <% end %>
-<p> Brand Sign Up </p>
   <div class="field">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
@@ -55,5 +54,4 @@
     <%= f.submit %>
   </div>
    <p> Want to sign up as an <%= link_to "Ambassador? Click here", :controller => "users", :action => "new", :kind => "Ambassador" %></p>
-<p> Already a member? <%= link_to "Log In", login_path %></p>
 <% end %>
