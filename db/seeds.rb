@@ -11,10 +11,11 @@ TwitterDatum.delete_all
 User.delete_all
 
 user_list = [
-  ["Bobby", "Bobson", "bob@email.com","asdf", "fishing", "Ambassador", "Bob likes to fish!"],
-  ["Suzy", "Snowflake", "suzy@email.com", "asdf", "foodie", "Ambassador", "Suzy likes to eat!"],
-  ["Richard", "Richardson", "rich@email.com", "asdf", "surfing", "Ambassador", "Rich loves the water!"],
-  ["Fishing Gear Inc", "a", "info@fishinggear.com", "asdf", "b", "Brand", "We need you to catch fish in our gear!"]
+  ['Bobby', 'Bobson', 'bob@email.com', 'asdf', 'fishing', 'Ambassador', 'Bob likes to fish!'],
+  ['Suzy', 'Snowflake', 'suzy@email.com', 'asdf', 'foodie', 'Ambassador', 'Suzy likes to eat!'],
+  ['Richard', 'Richardson', 'rich@email.com', 'asdf', 'surfing', 'Ambassador', 'Rich loves the water!'],
+  ['Fishing Gear Inc', 'a', 'info@fishinggear.com', 'asdf', 'b', 'Brand', 'We need you to catch fish in our gear!'],
+  ['Good Food Inc', 'a', 'info@goodfood.com', 'asdf', 'b', 'Brand', 'Eat our food & take lots of pics!']
 ]
 
 user_list.each do |first_name, last_name, email, password, category, kind, summary|
@@ -28,10 +29,11 @@ User.all.each do |user|
 end
 
 twitter_info = [
-  ["carmenb162", "Fri Jun 21 16:02:21 +0000 2013", "50", "55", "34234", "hi!", id_array[0]],
-  ["potus", "Fri Jun 21 16:02:21 +0000 2013", "50", "55", "34234", "hi!", id_array[1]],
-  ["poetus", "Fri Jun 21 16:02:21 +0000 2013", "50", "55", "34234", "hi!", id_array[2]],
-  ["wynncode", "Fri Jun 21 16:02:21 +0000 2013", "50", "55", "34234", "hi!", id_array[3]]
+  ['carmenb162', 'Sat Sep 27 08:03:40 +0000 2008', '32', '30', '16483758', 'hooptydoo', id_array[0]],
+  ['1deringscholar', 'Tue Feb 01 05:02:37 +0000 2011', '211', '13633', '245653493', 'teeheehee', id_array[1]],
+  ['pschoen325', 'Thu Feb 27 19:44:15 +0000 2014', '50', '5', '2369630722', 'blahblah', id_array[2]],
+  ['ericjgreene917', 'Wed Jun 29 18:03:28 +0000 2011', '64', '4', '326300907', 'tweetytweet', id_array[3]],
+  ['nastyahoppus', 'Wed Dec 29 22:46:16 +0000 2010', '9', '150', '231954366', 'lahdeedah', id_array[4]]
 ]
 
 twitter_info.each do |screen_name, created_at, followers_count, statuses_count, id_str, last_status, user_id|
