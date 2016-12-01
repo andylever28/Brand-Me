@@ -1,8 +1,10 @@
 <h1>New User</h1>
 
-<% if params[:kind] == "Brand" %> 
+<% if params[:kind] == "Brand" %>
 <%= render 'form_brand', user: @user %> <!-- #renders if user signup is for Brand -->
 <% else %>
 <%= render 'form', user: @user %> <!-- #renders if user signup is Ambassador -->
 <% end %>
+<p> Already a member? <%= link_to "Log In", login_path %></p>
+
 <%= link_to 'Home', root_path %>
