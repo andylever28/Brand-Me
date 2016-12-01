@@ -1,10 +1,23 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, except: [:create, :new]
+  # before_action :authorize, except: [:create, :new]
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @social = TwitterDatum.all.order(followers_count: :desc)
+    @users = []
+    @social.each do |stat|
+      @users << User.find(stat.user_id)
+    end
+
+    puts @users
+
+
+    # @users.each do |user|
+    #   user.twitter_datum.each do |follow|
+    #     follow.followers_count
+    #   end
+    # end
   end
 
   # GET /users/1
