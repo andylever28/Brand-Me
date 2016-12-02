@@ -1,5 +1,5 @@
 class TwitterDatum < ApplicationRecord
-  belongs_to :user
+ belongs_to :user
 
   def run_twitter_api
 
@@ -21,6 +21,12 @@ class TwitterDatum < ApplicationRecord
       :headers => headers,
       :query => query
     )
+
+    puts "screen_name #{response["screen_name"]}"
+    puts "join date, AKA created_at #{response["created_at"]}"
+    puts "following, AKA friends_count #{response["friends_count"]}"
+    puts "followers, AKA followers_count #{response["followers_count"]}"
+
 
   end
 
