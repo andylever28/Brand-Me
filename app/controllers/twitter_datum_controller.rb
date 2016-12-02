@@ -1,6 +1,7 @@
 class TwitterDatumController < ApplicationController
   def new
-  	  	@twitter = TwitterDatum.new
+  	@twitter = TwitterDatum.new
+    @twitter.run_twitter_api
   end
 
   def index
