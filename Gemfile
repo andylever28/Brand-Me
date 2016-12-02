@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+# Gem for environment variables;  make sure it stays @ top of gemfile so runs before any
+# other gems that may need info stored in env variable, e.g., httParty & the key for API
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
