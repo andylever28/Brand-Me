@@ -1,6 +1,8 @@
 class TwitterDatumController < ApplicationController
   def new
   	@twitter = TwitterDatum.new
+
+    # fire method run_twitter_api in twitter datum model 
     @twitter.run_twitter_api
 
   end
