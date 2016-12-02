@@ -1,4 +1,12 @@
 <h1>TwitterDatum#new</h1>
-<p>Find me in app/views/twitter_datum/new.html.erb</p>
+<p id="quest">Find me in app/views/twitter_datum/new.html.erb</p>
 
-<%= render 'form_twitter' %> 
+<%= form_tag("/users/:user_id/twitter_datum/new", method: "get") do %>
+  <%= label_tag(:q, "Please enter your twitter handle") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search", id: "btn") %>
+<% end %>
+
+<% if params[:q] != nil %>
+<%= @rando %>
+<% end %>

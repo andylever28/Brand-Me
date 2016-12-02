@@ -1,9 +1,9 @@
-class TwitterDatumController < ApplicationController
+  class TwitterDatumController < ApplicationController
+    before_action :rando, only: [:new]   
   def new
-  	@twitter = TwitterDatum.new
 
     # fire method run_twitter_api in twitter datum model 
-    @twitter.run_twitter_api
+    # @twitter.run_twitter_api
 
   end
 
@@ -19,4 +19,5 @@ class TwitterDatumController < ApplicationController
 
   def destroy
   end
+
 end
