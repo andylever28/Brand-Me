@@ -4,6 +4,9 @@ gem 'dotenv-rails', :groups => [:development, :test]
 # Gem for environment variables;  make sure it stays @ top of gemfile so runs before any
 # other gems that may need info stored in env variable, e.g., httParty & the key for API
 
+gem 'omniauth-twitter'
+
+
 gem 'httparty'
 # need this for Twitter API call
 
