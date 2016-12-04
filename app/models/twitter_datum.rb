@@ -22,7 +22,8 @@ class TwitterDatum < ApplicationRecord
       :query => query
     )
 
-    puts "screen_name #{response["screen_name"]}"
+    "screen_name" = response["screen_name"]
+
     puts "join date, AKA created_at #{response["created_at"]}"
     puts "followers, AKA followers_count #{response["followers_count"]}"
     puts "tweets, AKA statuses_count #{response["statuses_count"]}"
@@ -32,6 +33,11 @@ class TwitterDatum < ApplicationRecord
   end
 
   def new
+
+    = response["screen_name"]
+
+
+
     # this if they tweeted the instance variable of random string we told them to
     #don't want to write to TwitterDatum table unless we know it's their own handle
   end

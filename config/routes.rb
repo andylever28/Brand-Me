@@ -1,4 +1,4 @@
- Rails.application.routes.draw do
+Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
@@ -6,8 +6,8 @@
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :users do
-  	resources :twitter_datum
-	end
+  resources :twitter_datum
+end
 
   get 'page/home'
   root 'page#home'
