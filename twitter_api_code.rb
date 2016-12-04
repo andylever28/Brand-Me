@@ -18,7 +18,7 @@ query = {
   "screen_name" => screen_name
 }
 
-response = HTTParty.get(
+response = HTTParty.post(
   "https://api.twitter.com/1.1/users/show.json",
   :headers => headers,
   :query => query

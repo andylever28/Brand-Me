@@ -1,0 +1,21 @@
+.nav {
+	font-size: 1.5em;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white !important;
+    font-family: "Garamond "
+}
+
+.navbar-default {
+	margin: 0em !important;
+	background: #6DC0D5 !important;
+	border: none !important;
+	border-radius: 0px !important;
+}
+
+.containermain {
+	background-color: #FbFcff;
+	height: 20em;
+	margin: 0em;
+}

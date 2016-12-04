@@ -1,2 +1,9 @@
-Want to sign up as a <%= link_to "Brand? Click here", :controller => "users", :action => "new", :kind => "Brand" %>
-Want to sign up as an <%= link_to "Ambassador? Click here", :controller => "users", :action => "new", :kind => "Ambassador" %>
+<div class="containermain">
+	<div class="row">
+  	<div class="col-md-6">
+  		<%= link_to "Brand Sign Up", :controller => "users", :action => "new", :kind => "Brand", class: "homebtns" %>
+  	</div>
+ 	 	<div class="col-md-6">
+			<%= link_to "Ambassador Sign Up", :controller => "users",:action => "new", :kind => "Ambassador", class: "homebtns"%></div>
+		</div>
+</div>
