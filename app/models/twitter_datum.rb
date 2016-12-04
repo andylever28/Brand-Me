@@ -1,6 +1,7 @@
 class TwitterDatum < ApplicationRecord
  belongs_to :user
 
+
   def run_twitter_api
 
     # here is where we plug in the session variable containing the user's purported Twitter handle
@@ -22,8 +23,22 @@ class TwitterDatum < ApplicationRecord
       :query => query
     )
 
-    "screen_name" = response["screen_name"]
+    new_twitter_entry = TwitterDatum.new(followers_count: response["followers_count"], screen_name: response["screen_name",], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
 
+    new_twitter_entry.save
+
+    puts new_twitter_entry
+    puts new_twitter_entry.followers_count
+    puts "new_twitter_entry user_id is: #{new_twitter_entry.user_id}"
+    puts "@user is: #{@user}"
+    # puts "session[:user_id] is: #{session[:user_id]}"
+    puts params
+
+
+    #
+    #
+    # "screen_name" = response["screen_name"]
+    #
     puts "join date, AKA created_at #{response["created_at"]}"
     puts "followers, AKA followers_count #{response["followers_count"]}"
     puts "tweets, AKA statuses_count #{response["statuses_count"]}"
@@ -34,7 +49,6 @@ class TwitterDatum < ApplicationRecord
 
   def new
 
-    = response["screen_name"]
 
 
 
