@@ -1,16 +1,14 @@
 class SessionsController < ApplicationController
   def new
-
   end
 
   def create
-
     user = User.find_by_email(params[:email])
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to controller: 'users', action: 'show', id: user.id    
-else
+      redirect_to controller: 'users', action: 'show', id: user.id
+      else
       render :new
     end
   end
@@ -19,4 +17,5 @@ else
     session[:user_id] = nil
     redirect_to root_url, notice: 'Logged out'
   end
+
 end
