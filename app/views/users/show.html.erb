@@ -25,10 +25,13 @@
   <%= @user.kind %>
 </p>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @user.summary %>
-</p>
+
+<% @user.twitter_datum.each do |twit| %>
+<p> Twitter handle: <%= twit.screen_name %> </p>
+<p> Followers: <%= twit.followers_count %> </p>
+<p> Statuses: <%= twit.statuses_count %> </p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<%= link_to 'New Twitter', new_user_twitter_datum_path(@user) %>

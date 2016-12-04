@@ -32,7 +32,6 @@ class TwitterDatum < ApplicationRecord
     puts "new_twitter_entry user_id is: #{new_twitter_entry.user_id}"
     puts "@user is: #{@user}"
     # puts "session[:user_id] is: #{session[:user_id]}"
-    puts params
 
 
     #

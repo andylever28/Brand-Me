@@ -3,7 +3,7 @@
 <% if params[:kind] == "Brand" %>
 <%= render 'form_brand', user: @user %> <!-- #renders if user signup is for Brand -->
 <% else %>
-THIS WILL BE O AUTH<!-- #renders if user signup is Ambassador -->
+<%= render 'form_amb', user: @user %> <!-- #renders if user signup is for Brand -->
 <% end %>
 
 

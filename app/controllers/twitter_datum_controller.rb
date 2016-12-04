@@ -1,10 +1,11 @@
   class TwitterDatumController < ApplicationController
-    # before_action :rando, only: [:new]
+      before_action :set_user, only: [:index, :new, :create]
+
   def new
 
     # fire method run_twitter_api in twitter datum model
     @twitter = TwitterDatum.new
-    @twitter.run_twitter_api
+    # @twitter.run_twitter_api
 
   end
 
@@ -13,7 +14,25 @@
 
   end
   def create
-  end
+
+    screen_name = params[:q]
+    headers = {
+      "host" => "api.twitter.com",
+      "User-Agent" => "AmbassadorSeeksBrand",
+      "Authorization" => ENV["twitter_bearer_token"],
+      "Accept-Encoding" => "gzip"
+    }
+    query = {
+      "screen_name" => screen_name
+    }
+    response = HTTParty.get(
+      "https://api.twitter.com/1.1/users/show.json",
+      :headers => headers,
+      :query => query
+    )
+   @user.twitter_datum.create(followers_count: response["followers_count"], screen_name: response["screen_name",], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
+   
+   end
 
   def edit
   end
@@ -21,4 +40,9 @@
   def destroy
   end
 
+  private 
+
+  def set_user
+      @user = User.find(current_user.id)
+  end
 end
