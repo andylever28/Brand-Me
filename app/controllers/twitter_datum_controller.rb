@@ -13,8 +13,8 @@
   	@twitter = User.find(current_user).twitter_datum
 
   end
-  def create
 
+  def create
     screen_name = params[:q]
     headers = {
       "host" => "api.twitter.com",
@@ -30,9 +30,15 @@
       :headers => headers,
       :query => query
     )
-   @user.twitter_datum.create(followers_count: response["followers_count"], screen_name: response["screen_name",], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
-   
-   end
+     @user.twitter_datum.create(followers_count: response["followers_count"], screen_name: response["screen_name",], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
+
+
+     puts @user
+     puts @user["followers_count"]
+     puts "************We want the new entry's ID to be equal to currently logged in ID.  Right now, new_twitter_entry user_id is: #{@user["user_id"]}"
+     puts "*************...And this doesn't mean much, but @user is: #{@user}"
+
+  end
 
   def edit
   end
@@ -40,7 +46,7 @@
   def destroy
   end
 
-  private 
+  private
 
   def set_user
       @user = User.find(current_user.id)
