@@ -26,12 +26,18 @@
 </p>
 
 
+
+<% if @user.kind == "Ambassador" && @user.twitter_datum.first == nil  %>
+<p> It looks like you haven't added your twitter profile. Please enter your twitter handle below!<p> 
+<%= form_tag('/users/'+current_user.id.to_s+'/twitter_datum', method: "post") do %>
+  <%= label_tag(:q, "Please enter your twitter handle") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search", id: "btn") %>
+<% end %>
+<% else %>
 <% @user.twitter_datum.each do |twit| %>
 <p> Twitter handle: <%= twit.screen_name %> </p>
 <p> Followers: <%= twit.followers_count %> </p>
 <p> Statuses: <%= twit.statuses_count %> </p>
 <% end %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to 'New Twitter', new_user_twitter_datum_path(@user) %>
+<% end %>

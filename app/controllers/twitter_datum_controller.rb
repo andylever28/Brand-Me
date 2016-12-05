@@ -30,15 +30,20 @@
       :headers => headers,
       :query => query
     )
-     @user.twitter_datum.create(followers_count: response["followers_count"], screen_name: response["screen_name",], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
+    
+   @user.twitter_datum.create(followers_count: response["followers_count"], screen_name: response["screen_name",], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
 
-
-     puts @user
-     puts @user["followers_count"]
-     puts "************We want the new entry's ID to be equal to currently logged in ID.  Right now, new_twitter_entry user_id is: #{@user["user_id"]}"
-     puts "*************...And this doesn't mean much, but @user is: #{@user}"
-
-  end
+    respond_to do |format|
+      if @user.save
+        session[:user_id] = @user.id
+        format.html { redirect_to @user, notice: 'Twitter was succesfully linked to your account' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { redirect_to @user, notice: 'There was an error linking your account please try again' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+   end
 
   def edit
   end
