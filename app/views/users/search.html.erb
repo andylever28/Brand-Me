@@ -18,7 +18,7 @@
 
 <% @users.each do |user| %>
 	<% if user.twitter_datum.first != nil %>
-	<%= user.first_name %> <br> <%= user.kind %> <br>
+	<%= user.first_name %> <br> <%= user.id %> <br>
 	<% user.twitter_datum.each do |twitstat| %>
 	<%= twitstat.followers_count %><br> <br>
 	<% end %>

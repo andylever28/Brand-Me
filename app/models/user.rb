@@ -8,10 +8,6 @@ class User < ApplicationRecord
   validates :category, presence: true
   validates :kind, presence: true
 
-  scope :with_twitter_data, -> { includes(:twitter_datum) }
-  scope :any, -> { with_twitter_data.order('twitter_data.followers_count') }
-
-
   # Not sure what this does.  It came from following Stefan's tutorial...
   def to_s
     "#{first_name} #{last_name}"
