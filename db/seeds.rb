@@ -11,15 +11,15 @@ TwitterDatum.destroy_all
 User.destroy_all
 
 user_list = [
-  ['Carmen', 'Barron', 'carmen@email.com', 'asdf', 'fishing', 'Ambassador', 'Carmen likes to fish!'],
-  ['Nigell', 'King', 'nigell@email.com', 'asdf', 'foodie', 'Ambassador', 'Nigell likes to eat!'],
-  ['Paul', 'Schoen', 'paul@email.com', 'asdf', 'surfing', 'Ambassador', 'Paul loves the water!'],
-  ['Fishing Gear Inc', '(brand)', 'info@fishinggear.com', 'asdf', '(brand)', 'Brand', 'We need you to catch fish in our gear!'],
-  ['Good Food Inc', '(brand)', 'info@goodfood.com', 'asdf', '(brand)', 'Brand', 'Eat our food & take lots of pics!']
+  ['Carmen', 'Barron', 'carmen@email.com', 'asdf', 'Outdoor', 'Ambassador', 'Carmen likes to fish!', '26-35', 'F'],
+  ['Nigell', 'King', 'nigell@email.com', 'asdf', 'Foodie', 'Ambassador', 'Nigell likes to eat!', '26-35', 'M'],
+  ['Paul', 'Schoen', 'paul@email.com', 'asdf', 'Sports', 'Ambassador', 'Paul loves the water!', '26-35', 'M'],
+  ['Fishing Gear Inc', '(brand)', 'info@fishinggear.com', 'asdf', 'Outdoor', 'Brand', 'We need you to catch fish in our gear!', 'X', 'X'],
+  ['Good Food Inc', '(brand)', 'info@goodfood.com', 'asdf', 'Foodie', 'Brand', 'Eat our food & take lots of pics!', 'X', 'X']
 ]
 
-user_list.each do |first_name, last_name, email, password, category, kind, summary|
-  User.create(first_name: first_name, last_name: last_name, email: email, password: password, category: category, kind: kind, summary: summary)
+user_list.each do |first_name, last_name, email, password, category, kind, summary, age, gender|
+  User.create(first_name: first_name, last_name: last_name, email: email, password: password, category: category, kind: kind, summary: summary, age: age, gender: gender)
 end
 
   id_array = []
