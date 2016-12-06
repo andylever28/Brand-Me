@@ -1,0 +1,26 @@
+<%= form_tag('/users/search', method: "post") do %>
+  <div class="field">
+    <%= label_tag :category %>
+    <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %>
+  </div>  
+
+  <div class="field">
+    <%= label_tag :gender %>
+    <%= select_tag :gender, options_from_collection_for_select(User.genders, :to_s, :to_s)%>
+</div>  
+
+    <div class="field">
+    <%= label_tag :age  %>
+    <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%>
+    </div>
+    <%= submit_tag("Search", id: "btn") %>
+  <% end %>
+
+<% @users.each do |user| %>
+	<% if user.twitter_datum.first != nil %>
+	<%= user.first_name %> <br> <%= user.kind %> <br>
+	<% user.twitter_datum.each do |twitstat| %>
+	<%= twitstat.followers_count %><br> <br>
+	<% end %>
+<% end %>
+<% end %>

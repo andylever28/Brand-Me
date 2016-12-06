@@ -20,14 +20,14 @@
   <!-- NAVBAR -->
    <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
-<% if current_user %>
-<li><%= link_to "Home", current_user %></li>
-<li><%= link_to 'Edit Profile', edit_user_path(current_user) %> </li> 
-<% if current_user.kind == "Brand" %>
-    <li><%= link_to 'Search', users_path %> </li> 
+<% if @current_user %>
+<li><%= link_to "Home", @current_user %></li>
+<li><%= link_to 'Edit Profile', edit_user_path(@current_user) %> </li> 
+<% if @current_user.kind == "Brand" %>
+    <li><%= link_to 'Search', users_search_path %> </li> 
   <% end %>
 <li><%= link_to "Log Out", logout_path, class: "nav"  %></li>
-<li> Logged in as <%= current_user.email %> </li>
+<li> Logged in as <%= @current_user.email %> </li>
 <% else %>
 <li><%= link_to "Login", login_path, class: "nav" %></li>
 <li><%= link_to 'Home', root_path %></li>
