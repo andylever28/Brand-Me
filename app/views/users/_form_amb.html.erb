@@ -39,7 +39,14 @@
 
   <div class="field">
     <%= f.label :category %>
-    <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Pets Photography Politics Sports Technology Travel Wedding)%>
+    <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)%>
+</div>   <div class="field">
+    <%= f.label :age  %>
+    <%= f.select :age, %w(Under\ 25 26-35 36-45 46-55 55+)%>
+</div>   
+<div class="field">
+    <%= f.label :gender %>
+    <%= f.select :gender, %w(M F)%>
 </div>  
 
     <%= f.hidden_field(:kind, :value => params[:kind])%>

@@ -13,14 +13,10 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :first_name %>
+    <%= f.label :company_name %>
     <%= f.text_field :first_name %>
   </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
 
   <div class="field">
     <%= f.label :email %>
@@ -43,6 +39,8 @@
   </div>
 
     <%= f.hidden_field(:kind, :value => params[:kind])%>
+        <%= f.hidden_field(:age, :value => "X")%>
+    <%= f.hidden_field(:gender, :value => "X")%>
 
   <div class="actions">
     <%= f.submit %>

@@ -24,11 +24,20 @@
   <strong>Kind:</strong>
   <%= @user.kind %>
 </p>
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
 
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
 
 
 <% if @user.kind == "Ambassador" && @user.twitter_datum.first == nil  %>
 <p> It looks like you haven't added your twitter profile. Please enter your twitter handle below!<p> 
+
 <%= form_tag('/users/'+current_user.id.to_s+'/twitter_datum', method: "post") do %>
   <%= label_tag(:q, "Please enter your twitter handle") %>
   <%= text_field_tag(:q) %>

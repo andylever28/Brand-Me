@@ -78,7 +78,7 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :category, :kind, :summary)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :category, :kind, :summary, :age, :gender)
     end
 
     def authorize
