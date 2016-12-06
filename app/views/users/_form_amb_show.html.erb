@@ -1,0 +1,15 @@
+ <p>
+ <strong> <%= @user.first_name %> <%= @user.last_name %>  </strong>
+</p>
+<p>
+  <%= @user.summary %>
+</p>
+
+<p>
+  <strong></strong>
+  <%= @user.gender %> - <%= @user.age %> years old - <%= @user.category %>
+</p>
+
+<p>
+  <%= mail_to(@user.email, name = nil) %>
+</p>

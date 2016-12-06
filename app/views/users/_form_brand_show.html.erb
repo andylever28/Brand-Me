@@ -1,0 +1,13 @@
+ <p> <strong>
+  <%= @user.first_name %> -   <%= @user.category %>
+</strong>
+</p>
+
+<p>
+  <%= mail_to(@user.email, name = nil) %>
+</p>
+
+
+<p>
+  <%= @user.summary %>
+</p>
