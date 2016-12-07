@@ -1,4 +1,6 @@
-<div class="containermain">
+
+
+<!-- <div class="containermain">
 	<div class="row">
   	<div class="col-md-6">
   		<%= link_to "Brand Sign Up", :controller => "users", :action => "new", :kind => "Brand", class: "homebtns" %>
@@ -6,4 +8,34 @@
  	 	<div class="col-md-6">
 			<%= link_to "Ambassador Sign Up", :controller => "users",:action => "new", :kind => "Ambassador", class: "homebtns"%></div>
 		</div>
-</div>
+</div> -->
+
+
+
+<!--homepage message-->
+
+<section class="container text-center welcome-message">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<h1 class='large-name upcase' style='font-size:4em; font-weight:bold;'>MARKETING MADE SOCIAL</h1>
+			<h3 class='large-name upcase' style='font-size:2em; text-align:center'>social influencers for your brand based on analytics</h3>
+			<!-- <h3 class='large-name' style='font-size:2em; text-align:center'>We make it easier to find the right social influencer for your brand.</h3> -->
+			<div class='col-md-6 col-sm-8 col-xs-12 center-block' style='margin-top:6em;'>
+				<div class='row'>
+					<div class='col-md-6' style='font-family: Raleway; text-align:center !important; margin-top:1em'>
+						<div class='col-md-11 center-block' style='padding: 10px;font-size: 1.8em;background-color:#f66;'>
+							<%= link_to "Ambassador Sign Up", :controller => "users",:action => "new", :kind => "Ambassador", class: "homebtns"%>
+						</div>
+					</div>
+					<div class='col-md-6' style='font-family: Raleway; text-align:center !important; margin-top:1em'>
+						<div class='col-md-11 center-block' style='padding: 10px;font-size: 1.8em;background-color:#f66;'>
+							<%= link_to "Brand Sign Up", :controller => "users", :action => "new", :kind => "Brand", class: "homebtns" %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--homepage message end-->
