@@ -48,7 +48,7 @@
             <tr>
               <td>
                 <% if @current_user %>
-                <%= link_to "Profile", @current_user, class: "navbar-brand" %>
+                <%= link_to @current_user.first_name, @current_user, class: "navbar-brand" %>
                 <% else %>
                 <%= link_to "Welcome", root_path, class: "navbar-brand" %>
                 <% end %>
@@ -61,9 +61,6 @@
                 <% end %>
             </tr>
           </table>
-          <% if @current_user %>
-            <p class="nav navbar-text"><%= @current_user.email %></p>
-          <% end %>
         </div><!-- end navbar-header -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
           <ul class="nav navbar-nav">
