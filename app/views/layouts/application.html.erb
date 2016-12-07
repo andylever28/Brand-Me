@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
       <!-- Bootstrap -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,45 +30,58 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <!-- NAVBAR BEGIN-->
-    <nav class="navbar navbar-default">
-      <ul class="nav navbar-nav">
-        <% if @current_user %>
-          <li>
-            <%= link_to "Home", @current_user, class: "nav" %></li>
-          <li>
-            <%= link_to 'Edit Profile', edit_user_path(@current_user), class: "nav" %></li>
-          <% if @current_user.kind == "Brand" %>
-          <li>
-            <%= link_to 'Search', users_search_path %></li>
-          <% end %>
-          <li>
-            <%= link_to "Log Out", logout_path, class: "nav" %></li>
-          <li>
-            <p class="nav">Logged in as <%= @current_user.email %></p></li>
-            <!-- This navbar element looks different than links b/c it's in p tag vs. just li tag -->
-        <% else %>
-          <li>
-            <%= link_to "Login", login_path, class: "nav" %></li>
-          <li>
-            <%= link_to 'Home', root_path %></li>
-        <% end %>
-      </ul>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+          <ul class="nav navbar-nav">
+            <% if @current_user %>
+              <li>
+                <%= link_to "Home", @current_user, class: "nav" %></li>
+              <li>
+                <%= link_to 'Edit Profile', edit_user_path(@current_user), class: "nav" %></li>
+              <% if @current_user.kind == "Brand" %>
+              <li>
+                <%= link_to 'Search', users_search_path %></li>
+              <% end %>
+              <li>
+                <%= link_to "Log Out", logout_path, class: "nav" %></li>
+              <li>
+                <p class="nav">Logged in as <%= @current_user.email %></p></li>
+                <!-- This navbar element looks different than links b/c it's in p tag vs. just li tag -->
+            <% else %>
+              <li>
+                <%= link_to "Login", login_path, class: "nav" %></li>
+              <li>
+                <%= link_to 'Home', root_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <!-- End NAVBAR -->
 
     <% flash.each do |key, value| %>
       <%= content_tag(:div, class: "alert alert-#{key}") do %>
         <p><%= value %></p>
-        <script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
       <% end %>
     <% end %>
     <%= yield %>
+
+  <!-- Script tags below at very end of body, outside yield for appearance of faster JS & Jq loading -->
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
