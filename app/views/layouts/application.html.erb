@@ -7,7 +7,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      <title>Strapped &amp; Ready to Go</title>
+      <title>Brand ME</title>
 
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -28,47 +28,47 @@
       <%= csrf_meta_tags %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
-
   <body>
-  <!-- NAVBAR -->
-   <nav class="navbar navbar-default">
-    <ul class="nav navbar-nav">
+    <!-- NAVBAR BEGIN-->
+    <nav class="navbar navbar-default">
+      <ul class="nav navbar-nav">
+        <% if @current_user %>
+          <li>
+            <%= link_to "Home", @current_user, class: "nav" %></li>
+          <li>
+            <%= link_to 'Edit Profile', edit_user_path(@current_user), class: "nav" %></li>
+          <% if @current_user.kind == "Brand" %>
+          <li>
+            <%= link_to 'Search', users_search_path %></li>
+          <% end %>
+          <li>
+            <%= link_to "Log Out", logout_path, class: "nav" %></li>
+          <li>
+            <p class="nav">Logged in as <%= @current_user.email %></p></li>
+            <!-- This navbar element looks different than links b/c it's in p tag vs. just li tag -->
+        <% else %>
+          <li>
+            <%= link_to "Login", login_path, class: "nav" %></li>
+          <li>
+            <%= link_to 'Home', root_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <!-- End NAVBAR -->
 
-<% if @current_user %>
-<li><%= link_to "Home", @current_user %></li>
-<li><%= link_to 'Edit Profile', edit_user_path(@current_user) %> </li>
-<% if @current_user.kind == "Brand" %>
-    <li><%= link_to 'Search', users_search_path %> </li>
-  <% end %>
-<li><%= link_to "Log Out", logout_path, class: "nav"  %></li>
-<li> Logged in as <%= @current_user.email %> </li>
-<% else %>
-<li><%= link_to "Login", login_path, class: "nav" %></li>
-<li><%= link_to 'Home', root_path %></li>
-<% end %>
-</ul>
-</nav>
-  <!-- End NAVBAR -->
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, class: "alert alert-#{key}") do %>
+        <p><%= value %></p>
+        <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
 
-
-<% flash.each do |key, value| %>
-<%= content_tag(:div, class: "alert alert-#{key}") do %>
-<p><%= value %></p>
-
-
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<% end %>
-<% end %>
-
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
