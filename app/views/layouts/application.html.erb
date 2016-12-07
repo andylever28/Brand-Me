@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Brand ME</title>
@@ -35,7 +35,7 @@
         <p class="nav">Logged in as <%= @current_user.email %></p>
       <% end %>
     </div> -->
-    <nav class="navbar navbar-inverse navbar-static-top">
+    <!-- <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
@@ -61,8 +61,9 @@
                 <% end %>
             </tr>
           </table>
-        </div><!-- end navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+          </div> -->
+          <!-- end navbar-header -->
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
           <ul class="nav navbar-nav">
             <% if @current_user %>
               <li role="separator" class="divider"></li>
@@ -72,19 +73,59 @@
               <li>
                 <%= link_to "Log Out", logout_path, class: "navbar-brand" %></li>
               <li role="separator" class="divider"></li>
-              <!-- <li>
-                <p class="nav">Logged in as <%= @current_user.email %></p></li> -->
-                <!-- This navbar element looks different than links b/c it's in p tag vs. just li tag -->
             <% else %>
               <li>
                 <%= link_to "Login", login_path, class: "nav-brand" %></li>
-              <!-- <li>
-                <%= link_to 'Home', root_path %></li> -->
             <% end %>
           </ul>
         </div>
       </div>
+    </nav> -->
+
+    <nav class="navbar navbar-light bg-faded">
+      <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+      <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <ul class="nav navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
+              <% if @current_user %>
+                <%= link_to 'Edit Profile', edit_user_path(@current_user), class: "navbar-brand" %>
+                <%= link_to "Log Out", logout_path, class: "navbar-brand" %>
+              <% else %>
+                <%= link_to "Login", login_path, class: "navbar-brand" %>
+              <% end %>
+            </div>
+            <!-- end of dropdown-menu div  -->
+          </li>
+        </ul>
+        <form class="form-inline float-lg-right">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </nav>
+
+    <nav class="navbar navbar-light bg-faded">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
+      <div class="collapse" id="exCollapsingNavbar">
+        <div class="bg-inverse text-muted p-1">
+          <h4>Collapsed content</h4>
+          <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+      </div>
+    </nav>
+
 
     <% flash.each do |key, value| %>
       <%= content_tag(:div, class: "alert alert-#{key}") do %>
