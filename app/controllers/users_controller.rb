@@ -96,10 +96,10 @@ private
   end
 
   def authorize
-    if current_user.nil?
+    if @current_user.nil?
       redirect_to login_url, alert: "Not authorized! Please log in."
-    elsif @user != current_user && current_user.kind != "Brand"
-        redirect_to controller: 'users', action: 'show', id: current_user.id, notice: "Not authorized! Only #{@user} has access to this post."
+    elsif @user != @current_user && @current_user.kind != "Brand"
+        redirect_to controller: 'users', action: 'show', id: @current_user.id, notice: "Not authorized! Only #{@user} has access to this post."
     end
   end
 
