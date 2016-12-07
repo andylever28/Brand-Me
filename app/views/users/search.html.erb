@@ -1,32 +1,42 @@
 <%= form_tag('/users/search', method: "post") do %>
 <div class="container">
+
   <div class="row"> 
-  <div class="col-xs-12 col-md-4" id="searchform">
-  <div class="field">
-    <%= label_tag :category %>
-    <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %>
-  </div>  
 
-  <div class="field">
-    <%= label_tag :gender %>
-    <%= select_tag :gender, options_from_collection_for_select(User.genders, :to_s, :to_s)%>
-</div>  
+  <div class="searchform col-xs-12 col-md-4">
+      <div class="field">
+        <%= label_tag :category %>
+        <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %>
+      </div>  
 
-    <div class="field">
-    <%= label_tag :age  %>
-    <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%>
+      <div class="field">
+        <%= label_tag :gender %>
+        <%= select_tag :gender, options_from_collection_for_select(User.genders, :to_s, :to_s)%>
+      </div>  
+
+      <div class="field">
+        <%= label_tag :age  %>
+        <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%>
+      </div>
+      <%= submit_tag("Search", id: "btn") %>
+      <% end %>
     </div>
-    <%= submit_tag("Search", id: "btn") %>
-  <% end %>
+    <div class="col-xs-12 col-md-8">
+
+      <div class="row">
+        <% @users.each do |user| %>
+        <% if user.twitter_datum.first %>
+        <%= div_for(user, class: "searchresults col-xs-12") do %>
+        <p> <%= user.first_name %> <%= user.last_name %> </p>
+        <% user.twitter_datum.each do |twitstat| %>
+        <p><%= twitstat.followers_count %> </p>
+        <% end %>
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-  <div class="col-xs-12 col-md-8"
-<% @users.each do |user| %>
-	<% if user.twitter_datum.first != nil %>
-	<%= user.first_name %> <br> <%= user.id %> <br>
-	<% user.twitter_datum.each do |twitstat| %>
-	<%= twitstat.followers_count %><br> <br>
-	<% end %>
-<% end %>
-<% end %>
-</div>
-</div>
+
+
