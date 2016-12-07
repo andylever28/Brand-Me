@@ -1,17 +1,14 @@
-  class TwitterDatumController < ApplicationController
-      before_action :set_user, only: [:index, :new, :create]
+class TwitterDatumController < ApplicationController
+  before_action :set_user, only: [:index, :new, :create]
 
   def new
-
     # fire method run_twitter_api in twitter datum model
     @twitter = TwitterDatum.new
     # @twitter.run_twitter_api
-
   end
 
   def index
   	@twitter = User.find(current_user).twitter_datum
-
   end
 
   def create
@@ -32,11 +29,10 @@
     )
     if response["screen_name"] == nil
       redirect_to @user, notice: 'There was an error linking your account please try again'
-    else 
+    else
       @user.twitter_datum.create(followers_count: response["followers_count"], screen_name: response["screen_name"], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
       redirect_to @user, notice: 'Twitter was succesfully linked to your account'
     end
-    
    end
 
   def edit
@@ -48,6 +44,6 @@
   private
 
   def set_user
-      @user = User.find(current_user.id)
+    @user = User.find(current_user.id)
   end
 end
