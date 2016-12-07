@@ -35,7 +35,7 @@
         <p class="nav">Logged in as <%= @current_user.email %></p>
       <% end %>
     </div> -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
@@ -51,27 +51,29 @@
               <% end %>
             </td>
             <td>
-              <%= link_to "Home", @current_user, class: "nav" %></li>
+              <%= link_to "Home", @current_user, class: "navbar-brand" %></li>
             </tr></td>
           </table>
           <% if @current_user %>
-            <p class="nav navbar-brand">Logged in as <%= @current_user.email %></p>
+            <p class="nav navbar-text"><%= @current_user.email %></p>
           <% end %>
-
-        </div>
+        </div><!-- end navbar-header -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
           <ul class="nav navbar-nav">
             <% if @current_user %>
+              <li role="separator" class="divider"></li>
               <li>
-                <%= link_to 'Edit Profile', edit_user_path(@current_user), class: "nav" %></li>
+                <%= link_to 'Edit Profile', edit_user_path(@current_user), class: "navbar-brand" %></li>
+              <li role="separator" class="divider"></li>
               <li>
-                <%= link_to "Log Out", logout_path, class: "nav" %></li>
+                <%= link_to "Log Out", logout_path, class: "navbar-brand" %></li>
+              <li role="separator" class="divider"></li>
               <!-- <li>
                 <p class="nav">Logged in as <%= @current_user.email %></p></li> -->
                 <!-- This navbar element looks different than links b/c it's in p tag vs. just li tag -->
             <% else %>
               <li>
-                <%= link_to "Login", login_path, class: "nav" %></li>
+                <%= link_to "Login", login_path, class: "nav-brand" %></li>
               <li>
                 <%= link_to 'Home', root_path %></li>
             <% end %>
