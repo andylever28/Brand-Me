@@ -30,19 +30,13 @@
       :headers => headers,
       :query => query
     )
-    
-   @user.twitter_datum.create(followers_count: response["followers_count"], screen_name: response["screen_name",], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
-
-    respond_to do |format|
-      if @user.save
-        session[:user_id] = @user.id
-        format.html { redirect_to @user, notice: 'Twitter was succesfully linked to your account' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { redirect_to @user, notice: 'There was an error linking your account please try again' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if response["screen_name"] == nil
+      redirect_to @user, notice: 'There was an error linking your account please try again'
+    else 
+      @user.twitter_datum.create(followers_count: response["followers_count"], screen_name: response["screen_name"], statuses_count: response["statuses_count"], id_str: response["id_str"],created_at: response["created_at"], last_status: response["last_status"])
+      redirect_to @user, notice: 'Twitter was succesfully linked to your account'
     end
+    
    end
 
   def edit

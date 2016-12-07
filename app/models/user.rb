@@ -13,4 +13,16 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def self.genders
+    %w(Any M F)
+  end
+
+  def self.categories
+    %w(Any Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)
+  end
+
+  def self.ages
+    %w(Any Under\ 25 26-35 36-45 46-55 55+)
+  end
+
 end

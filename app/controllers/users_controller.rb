@@ -69,6 +69,23 @@
     end
   end
 
+  def search 
+
+    query = {
+      kind: 'Ambassador',
+      age: params[:age],
+      category: params[:category],
+      gender: params[:gender]
+    }.reject { |k, v| v == 'Any' }
+
+    age = params[:age]
+    category = params[:category] 
+    gender = params[:gender]
+
+    @users = User.includes(:twitter_datum).where(query).order('twitter_data.followers_count DESC')
+
+
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
