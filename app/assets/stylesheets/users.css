@@ -1,0 +1,14 @@
+.searchresults {
+	border: 1px solid black;
+}
+
+.searchresults p {
+	margin: 0em;
+}
+
+.searchform {
+	display: flex;
+	justify-content: space-around;
+}
+
+	
