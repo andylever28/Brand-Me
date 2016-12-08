@@ -45,7 +45,7 @@
               </td>
               <td>
                 <% if @current_user && @current_user.kind == "Brand" %>
-                <a href = <%= users_search_path %> > <span class="glyphicon glyphicon-search"></span> Search</a></li>
+                 <span class="glyphicon glyphicon-search"></span><%= link_to 'Search', users_search_path %></li>
               </td>
               <td>
                 <% end %>
@@ -57,12 +57,15 @@
           <ul class="nav navbar-nav">
             <% if @current_user %>
               <li>
-                <a href = <%= edit_user_path(@current_user) %> > <span class="glyphicon glyphicon-pencil"></span> Edit Profile</a></li>
+                <a href = <%= edit_user_path(@current_user) %> > <span class="glyphicon glyphicon-pencil"></span> Edit Profile</a>
+              </li>
               <li>
-                <a href = <%= logout_path %> > <span class="glyphicon glyphicon-minus"></span> Log Out</a></li>
+                <a href = <%= logout_path %> > <span class="glyphicon glyphicon-minus"></span> Log Out</a>
+              </li>
             <% elsif !@current_user %>
               <li>
-                <a href = <%= login_path %> > <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <a href = <%= login_path %> > <span class="glyphicon glyphicon-log-in"></span> Login</a>
+              </li>
             <% end %>
           </ul>
         </div>
