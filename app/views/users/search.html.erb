@@ -28,7 +28,7 @@
         <% if !@users.empty? %>
           <% @users.each do |user| %>
             <% if user.twitter_datum.first %>
-              <div class="col-xs-12 col-sm-2">
+              <div class="imgdiv col-xs-12 col-sm-2">
               <% if user.twitter_datum.first.url %>
                <%= link_to image_tag(user.twitter_datum.first.url, class: "searchicon"), user %>
                <% end %>

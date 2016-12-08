@@ -55,6 +55,7 @@ span#searchresbold {
 }
 .searchform {
 	flex-direction: column;
+	margin: auto;
 }
 
 .searchform p {
@@ -83,13 +84,20 @@ span#searchresbold {
 }
 
 .showinfoamb p {
-	margin: 0em;
+	font-family: "Helvetica Neue";
+	margin: 0.2em;
 	text-align: center;
+	font-size: 1em;
 }
 
 p#showname {
 	font-size: 1.3em;
 	font-family: "Helvetica Neue";
+}
+
+.imgdiv a,
+.imgdiv a:hover {
+	background: transparent;
 }
 
 @media (min-width: 768px) {
@@ -103,7 +111,8 @@ p#showname {
 	}
 
 	.searchicon {
-		width: 100%;
+		width: 90%;
+
 	}
 }
 
@@ -113,7 +122,6 @@ p#showname {
 	flex-direction: column;
 	position: fixed;
 	}
-
 
 }
 

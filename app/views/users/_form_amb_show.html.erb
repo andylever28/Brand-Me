@@ -1,7 +1,17 @@
 <div class="container">
-	<div class="searchresults row"> 
+	<div class="row"> 
 		<div class="showinfoamb col-md-6">
+		<div class="row">
+		<div class="col-xs-12">
+		<% if @user.twitter_datum.first %>
 			<%= image_tag(user.twitter_datum.first.url) %>
+			<% else %>
+			<p> Please add your twitter handle to display profile img </p>
+			<% end %>
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-xs-12">
 			<p id="showname">
 				<%= @user.first_name %> <%= @user.last_name %> 
 			</p>
@@ -16,7 +26,6 @@
 			<p>
 				<%= mail_to(@user.email, name = nil) %>
 			</p>
-
 			<% if @current_user.kind == "Ambassador" && @current_user.twitter_datum.first == nil  %>
 				<p> It looks like you haven't added your twitter profile. Please enter your twitter handle below!</p> 
 					<%= form_tag('/users/'+current_user.id.to_s+'/twitter_datum', method: "post") do %>
@@ -32,11 +41,23 @@
 			<% end %>
 			<% end %>
 		</div>
+		</div>
+</div>
+
+
+
+
+
 
 		<div class="col-xs-12 col-md-6">
 			<div>
+			<% if @user.twitter_datum.first %>
 				<a class="twitter-timeline" href="https://twitter.com/<%=@user.twitter_datum.first.screen_name%>" data-height="450"
-					>Tweets by 	</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+					>Tweets by 	</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					<% else %>
+					<p> Add a twitter profile to display recent tweets! </p>
+					<% end %>
+					</div>
 				</div>
 			</div>
 		</div>
