@@ -27,8 +27,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <nav class="navbar navbar-default navbar-static-top">
+  <body class="background-media">
+    <nav class="navbar-static-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
@@ -70,7 +70,7 @@
     </nav>
 
       <% flash.each do |key, value| %>
-        <%= content_tag(:div, class: "alert alert-#{key}") do %>
+        <%= content_tag(:div, class: "alert alert-#{key}", id:"welcome-pg-alert") do %>
           <p><%= value %></p>
         <% end %>
       <% end %>
