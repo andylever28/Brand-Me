@@ -1,0 +1,20 @@
+body.background-media{
+  background-image: url("home_background_photo");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+
+#homepage-buttons-div{
+  margin: auto;
+  float: none;
+  display:block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1.8em;
+  text-decoration: none;
+}
+
+#brandme{
+  color:#c5d1e5;
+}
