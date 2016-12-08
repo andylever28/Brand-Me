@@ -1,19 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="searchhead col-xs-12">
-      <p> Search </p>
-    </div>
-  </div>
-</div>
-
-  <div class="col-xs-12 col-md-9">
-
-
   <div class="container">
-    <div class="row">
+    <div class="searchrow row">
       <div class="col-xs-12 col-md-3">
         <%= form_tag('/users/search', method: "post") do %>
           <div class="searchform">
+            <p>Search</p>
             <div class="field">
               <strong> Category: </strong>
               <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %>
@@ -27,7 +17,7 @@
               <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%>
             </div>
             <div class="field">
-            <%= submit_tag("Search", id: "btn") %>
+            <%= submit_tag("Find Talent", id: "btn") %>
             </div>
           </div>
         <% end %>
@@ -35,6 +25,7 @@
 
       <div class="col-xs-12 col-md-9">
         <div class="row">
+        <% if !@users.empty? %>
           <% @users.each do |user| %>
             <% if user.twitter_datum.first %>
               <%= div_for(user, class: "searchresults col-xs-12 col-sm-7") do %>
@@ -52,6 +43,9 @@
               <% end %>
             <% end %>
           <% end %>
+          <% else %>
+          <p id="searchdefaultmessage"> Search results will return here </p>
+          <%end%>
         </div>
       </div><!--END col-xs-12 col-md-9-->
     </div>

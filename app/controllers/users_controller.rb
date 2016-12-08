@@ -82,6 +82,7 @@ def search
   gender = params[:gender]
 
   @users = User.includes(:twitter_datum).where(query).order('twitter_data.followers_count DESC')
+
 end
 
 private

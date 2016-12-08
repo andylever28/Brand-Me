@@ -1,9 +1,13 @@
+
 .searchresults,
 .tweetresults {
 	height: 9em;
 	margin-bottom: 0em;
 }
 
+.searchrow {
+	margin-top: 1em;
+}
 .tweetresults {
 	border-bottom: 1px solid #e1e8ed;
 	margin-bottom: 1em;
@@ -14,7 +18,7 @@
 	margin: 0em;
 	margin-bottom: 0.5em;
 	font-size: 1.2em;	
-	color: #66757f;
+	color: #333333;
 	font-family: "Helvetica Neue"
 }
 
@@ -31,8 +35,8 @@ p#searchresname {
 	font-size: 1.4em;
 	color: black;
 	font-weight: bold;
-
 } 
+
 span#searchresbold {
 	font-size: 1em;
 	font-weight: bold;
@@ -42,19 +46,33 @@ span#searchresbold {
 #searchresname a {
 	font-size: 1em;
 	color: #09A0DB;
-	background-color: white;
 }
 
-#searchresbold a:hover {
-	color: black;
+#searchresname a:hover {
+	color: white;
+	background: transparent;
 }
 .searchform {
 	flex-direction: column;
-	}
+}
 
+.searchform p {
+	margin: 0 0 1em 0;
+	color: black;
+	font-size: 1em;
+	font-weight: bold;
+}
 .searchhead p {
 	text-align: center;
 	font-size: 3em;
+	font-family: "Helvetica Neue";
+	color: black;
+}
+
+#searchdefaultmessage {
+	text-align: center;
+	font-size: 2.2em;
+	color: #333333;
 	font-family: "Helvetica Neue"
 }
 @media (min-width: 768px) {
