@@ -3,6 +3,7 @@
 .tweetresults {
 	height: 9em;
 	margin-bottom: 0em;
+	text-align: center;
 }
 
 .searchrow {
@@ -75,12 +76,34 @@ span#searchresbold {
 	color: #333333;
 	font-family: "Helvetica Neue"
 }
+
+.searchicon {
+	width: 60%;
+	margin-left: 20%;
+}
+
+.showinfoamb p {
+	margin: 0em;
+	text-align: center;
+}
+
+p#showname {
+	font-size: 1.3em;
+	font-family: "Helvetica Neue";
+}
+
 @media (min-width: 768px) {
 
 .searchresults,
-.tweetresults {
+.tweetresults
+ {
 	border-bottom: 1px solid #e1e8ed;
 	margin-bottom: 1em;
+	text-align: left;
+	}
+
+	.searchicon {
+		width: 90%;
 	}
 }
 
@@ -90,6 +113,8 @@ span#searchresbold {
 	flex-direction: column;
 	position: fixed;
 	}
+
+
 }
 
 

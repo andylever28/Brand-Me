@@ -28,11 +28,17 @@
         <% if !@users.empty? %>
           <% @users.each do |user| %>
             <% if user.twitter_datum.first %>
-              <%= div_for(user, class: "searchresults col-xs-12 col-sm-7") do %>
+              <div class="col-xs-12 col-sm-2">
+              <% if user.twitter_datum.first.url %>
+               <%= link_to image_tag(user.twitter_datum.first.url, class: "searchicon"), user %>
+               <% end %>
+              </div>
+              <%= div_for(user, class: "searchresults col-xs-12 col-sm-5") do %>
                 <p id="searchresname"> <%= user.first_name %> <%= user.last_name %> - <%= link_to 'View', user%> </p>
                 <p> <%= user.category %> - <%= user.gender%> - <%= user.age %> years old </p>
                 <p> <span id="searchresbold">  Bio: </span> <%= user.summary %></p>
               <% end %>
+            
               <%= div_for(user, class: "tweetresults col-xs-12 col-sm-5") do %>
                 <% user.twitter_datum.each do |twitstat| %>
                   <p> <span id="searchresbold"> Social Stats: </span> </p>

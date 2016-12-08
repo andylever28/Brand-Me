@@ -1,23 +1,14 @@
 <p> <% if params[:notice] %>
     <%= params[:notice] %>
     <% end %> </p>
- <% if current_user.kind == "Brand" %>
-<%= render 'form_brand_show', user: @user %>
+    
+ <% if @current_user == @user %>
+    <% if @current_user.kind == "Brand" %>
+      <%= render 'form_brand_show', user: @current_user %>
+    <% else %>
+      <%= render 'form_amb_show', user: @current_user %>
+    <% end %>
 <% else %>
-<%= render 'form_amb_show', user: @user %>
+    <%= render 'form_amb_show', user: @user %>
 <% end %>
 
-<% if current_user.kind == "Ambassador" && current_user.twitter_datum.first == nil  %>
-  <p> It looks like you haven't added your twitter profile. Please enter your twitter handle below!</p> 
-  <%= form_tag('/users/'+current_user.id.to_s+'/twitter_datum', method: "post") do %>
-    <%= label_tag(:q, "Please enter your twitter handle") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search", id: "btn") %>
-  <% end %>
-<% else %>
-  <% @user.twitter_datum.each do |twit| %>
-    <p> <strong> Twitter handle: </strong> <%= twit.screen_name %> </p>
-    <p> <strong> Followers: </strong><%= twit.followers_count %> </p>
-    <p> <strong> Statuses: </strong> <%= twit.statuses_count %> </p>
-  <% end %>
-<% end %>
