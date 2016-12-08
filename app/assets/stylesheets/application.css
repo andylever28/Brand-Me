@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+#welcome-pg-alert{
+  color: red;
+}
+
+body.background-media{
+  background-image: url("home_background_photo");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
