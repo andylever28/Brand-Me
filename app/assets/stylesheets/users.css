@@ -1,9 +1,21 @@
-.searchresults {
-	border: 1px solid black;
+.searchresults,
+.tweetresults {
+	height: 9em;
+	margin-bottom: 0em;
 }
 
-.searchresults p {
+.tweetresults {
+	border-bottom: 1px solid #e1e8ed;
+	margin-bottom: 1em;
+}
+
+.searchresults p,
+.tweetresults p {
 	margin: 0em;
+	margin-bottom: 0.5em;
+	font-size: 1.2em;	
+	color: #66757f;
+	font-family: "Helvetica Neue"
 }
 
 .searchform {
@@ -11,4 +23,45 @@
 	justify-content: space-around;
 }
 
-	
+div.field {
+	margin-bottom: 1.5em;
+}
+p#searchresname {
+	font-size: 1.4em;
+	color: black;
+	font-weight: bold;
+
+} 
+span#searchresbold {
+	font-size: 1em;
+	font-weight: bold;
+	color: black;
+	font-family: "Helvetica Neue"
+}
+#searchresname a {
+	font-size: 1em;
+	color: #09A0DB;
+	background-color: white;
+}
+
+#searchresbold a:hover {
+	color: black;
+}
+
+@media (min-width: 765px) {
+
+.searchresults,
+.tweetresults {
+	border-bottom: 1px solid #e1e8ed;
+	margin-bottom: 1em;
+	}
+}
+
+@media (min-width: 900px) {
+
+.searchform {
+	flex-direction: column;
+	position: fixed;
+	}
+}
+
