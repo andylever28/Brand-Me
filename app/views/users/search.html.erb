@@ -1,56 +1,49 @@
-<%= form_tag('/users/search', method: "post") do %>
-<div class="container">
-
-  <div class="row"> 
-    <div class="col-xs-12 col-md-3">
-
-      <div class="searchform">
-        <div class="field">
-         <strong> Category: </strong>
-         <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %>
-       </div>  
-
-       <div class="field">
-        <strong> Gender: </strong>
-        <%= select_tag :gender, options_from_collection_for_select(User.genders, :to_s, :to_s)%>
-      </div>  
-
-      <div class="field">
-        <strong> Age: </strong>
-        <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%>
-      </div>
-      <div class="field">
-      <br>
-        <%= submit_tag("Search", id: "btn") %>
-      </div>
-      <% end %>
-    </div>
-  </div>
-
-
-  <div class="col-xs-12 col-md-9">
-
+  <div class="container">
     <div class="row">
-      <% @users.each do |user| %>
-      <% if user.twitter_datum.first %>
-      <%= div_for(user, class: "searchresults col-xs-12 col-sm-7") do %>
-      <p id="searchresname"> <%= user.first_name %> <%= user.last_name %> - <%= link_to 'View', user%> </p>
-      <p> <%= user.category %> - <%= user.gender%> - <%= user.age %> years old </p>
-      <p> <span id="searchresbold">  Bio: </span> <%= user.summary %></p>
-      <% end %>
-      <%= div_for(user, class: "tweetresults col-xs-12 col-sm-5") do %>
-      <% user.twitter_datum.each do |twitstat| %>
-      <p> <span id="searchresbold"> Social Stats: </span> </p>
-      <p>@<%= twitstat.screen_name %> </p>
-      <p> <%= twitstat.followers_count %> Followers </p>
-      <p> <%= twitstat.statuses_count %> Tweets </p>
-      <% end %>
-      <% end %>
-      <% end %>
-      <% end %>
+
+      <div class="col-xs-12 col-md-3">
+        <%= form_tag('/users/search', method: "post") do %>
+          <div class="searchform">
+            <div class="field">
+              <strong> Category: </strong>
+              <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %>
+            </div>
+            <div class="field">
+              <strong> Gender: </strong>
+              <%= select_tag :gender, options_from_collection_for_select(User.genders, :to_s, :to_s)%>
+            </div>
+            <div class="field">
+              <strong> Age: </strong>
+              <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%>
+            </div>
+            <div class="field">
+            <%= submit_tag("Search", id: "btn") %>
+            </div>
+          </div>
+        <% end %>
+      </div><!--END col-xs-12 col-md-3-->
+
+      <div class="col-xs-12 col-md-9">
+        <div class="row">
+          <% @users.each do |user| %>
+            <% if user.twitter_datum.first %>
+              <%= div_for(user, class: "searchresults col-xs-12 col-sm-7") do %>
+                <p id="searchresname"> <%= user.first_name %> <%= user.last_name %> - <%= link_to 'View', user%> </p>
+                <p> <%= user.category %> - <%= user.gender%> - <%= user.age %> years old </p>
+                <p> <span id="searchresbold">  Bio: </span> <%= user.summary %></p>
+              <% end %>
+              <%= div_for(user, class: "tweetresults col-xs-12 col-sm-5") do %>
+                <% user.twitter_datum.each do |twitstat| %>
+                  <p> <span id="searchresbold"> Social Stats: </span> </p>
+                  <p>@<%= twitstat.screen_name %> </p>
+                  <p> <%= twitstat.followers_count %> Followers </p>
+                  <p> <%= twitstat.statuses_count %> Tweets </p>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div><!--END col-xs-12 col-md-9-->
+
     </div>
-  </div>
-</div>
-</div>
-
-
+  </div><!--END CONTAINER-->
