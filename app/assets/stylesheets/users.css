@@ -26,6 +26,7 @@
 div.field {
 	margin-bottom: 1.5em;
 }
+
 p#searchresname {
 	font-size: 1.4em;
 	color: black;
@@ -51,6 +52,11 @@ span#searchresbold {
 	flex-direction: column;
 	}
 
+.searchhead p {
+	text-align: center;
+	font-size: 3em;
+	font-family: "Helvetica Neue"
+}
 @media (min-width: 768px) {
 
 .searchresults,
@@ -67,4 +73,5 @@ span#searchresbold {
 	position: fixed;
 	}
 }
+
 
