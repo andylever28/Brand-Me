@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   post '/users/search' => 'users#search'
 
   resources :users do
-  resources :twitter_datum
-end
+    resources :twitter_datum
+  end
 
   get 'page/home'
   root 'page#home'
