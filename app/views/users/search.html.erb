@@ -34,17 +34,16 @@
                <% end %>
               </div>
 
-              
+
               <%= div_for(user, class: "searchresults col-xs-12 col-sm-5") do %>
-                <p id="searchresname"> <%= user.first_name %> <%= user.last_name %> - <%= link_to 'View', user%> </p>
+                <p class="searchresname"> <%= user.first_name %> <%= user.last_name %> - <%= link_to 'View', user%> </p>
                 <p> <%= user.category %> - <%= user.gender%> - <%= user.age %> years old </p>
                 <p> <span id="searchresbold">  Bio: </span> <%= user.summary %></p>
               <% end %>
             
               <%= div_for(user, class: "tweetresults col-xs-12 col-sm-5") do %>
                 <% user.twitter_datum.each do |twitstat| %>
-                  <p> <span id="searchresbold"> Social Stats: </span> </p>
-                  <p>@<%= twitstat.screen_name %> </p>
+                  <p class="searchresname"><%= link_to("@"+twitstat.screen_name, "https://twitter.com/"+twitstat.screen_name)%> </span> </p>
                   <p> <%= twitstat.followers_count %> Followers </p>
                   <p> <%= twitstat.statuses_count %> Tweets </p>
                 <% end %>

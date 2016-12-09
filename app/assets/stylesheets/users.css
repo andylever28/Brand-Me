@@ -1,3 +1,8 @@
+.navbar-fixed-top {
+	background: white; /*This is what fills in background on navbar*/
+}
+
+body { padding-top: 30px; }
 
 .searchresults,
 .tweetresults {
@@ -32,7 +37,7 @@ div.field {
 	margin-bottom: 1.5em;
 }
 
-p#searchresname {
+p.searchresname {
 	font-size: 1.4em;
 	color: black;
 	font-weight: bold;
@@ -44,13 +49,13 @@ span#searchresbold {
 	color: black;
 	font-family: "Helvetica Neue"
 }
-#searchresname a {
+.searchresname a {
 	font-size: 1em;
 	color: #09A0DB;
 }
 
-#searchresname a:hover {
-	color: white;
+.searchresname a:hover {
+	color: black;
 	background: transparent;
 }
 .searchform {
@@ -137,6 +142,7 @@ p#showname {
 .searchform {
 	flex-direction: column;
 	position: fixed;
+	margin-top: 2em;
 	}
 
 .showinfoamb p {
