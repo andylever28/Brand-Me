@@ -1,10 +1,10 @@
 <% if @user == current_user %>
-<h1>Edit Profile</h1>
-<% if current_user.kind == "Brand" %>
-<%= render 'form_brand_edit', user: @user %>
+  <h1>Edit Profile</h1>
+  <% if current_user.kind == "Brand" %>
+    <%= render 'form_brand_edit', user: @user %>
+  <% else %>
+    <%= render 'form_ambass_edit', user: @user %>
+  <% end %>
 <% else %>
-<%= render 'form_ambass_edit', user: @user %>
-<% end %>
-<% else %>
-<h1> No Access </h1>
+  <h1> No Access </h1>
 <% end %>
