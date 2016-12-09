@@ -24,7 +24,7 @@
       </div><!--END col-xs-12 col-md-3-->
 
       <div class="col-xs-12 col-md-9">
-        <div class="row">
+        <div class="resultsrow row">
         <% if !@users.empty? %>
           <% @users.each do |user| %>
             <% if user.twitter_datum.first %>
@@ -33,6 +33,8 @@
                <%= link_to image_tag(user.twitter_datum.first.url, class: "searchicon"), user %>
                <% end %>
               </div>
+
+              
               <%= div_for(user, class: "searchresults col-xs-12 col-sm-5") do %>
                 <p id="searchresname"> <%= user.first_name %> <%= user.last_name %> - <%= link_to 'View', user%> </p>
                 <p> <%= user.category %> - <%= user.gender%> - <%= user.age %> years old </p>

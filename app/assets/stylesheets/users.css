@@ -82,12 +82,13 @@ span#searchresbold {
 	width: 60%;
 	margin-left: 20%;
 }
-
+	
 .showinfoamb p {
 	font-family: "Helvetica Neue";
 	margin: 0.2em;
 	text-align: center;
 	font-size: 1em;
+	font-weight: bold;
 }
 
 p#showname {
@@ -100,11 +101,27 @@ p#showname {
 	background: transparent;
 }
 
+.defaultimg {
+	width: 76%;
+	margin-left: 12%;
+}
+
+#twitterform {
+		text-align: center;
+	}
+
+	.tweetframe p {
+		text-align: center;
+		font-family: "Helvetica Neue";
+		margin: 0em;
+	}
+
+
 @media (min-width: 768px) {
 
 .searchresults,
-.tweetresults
- {
+.tweetresults,
+.imgdiv {
 	border-bottom: 1px solid #e1e8ed;
 	margin-bottom: 1em;
 	text-align: left;
@@ -112,7 +129,6 @@ p#showname {
 
 	.searchicon {
 		width: 90%;
-
 	}
 }
 
@@ -123,6 +139,9 @@ p#showname {
 	position: fixed;
 	}
 
+.showinfoamb p {
+	text-align: center;
+	}
 }
 
 
