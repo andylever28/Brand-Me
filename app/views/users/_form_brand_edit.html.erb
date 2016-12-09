@@ -1,32 +1,35 @@
 <%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% if user.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(user.errors.count, "error") %>
+        prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
+    <ul>
+        <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <p> Brand </p>
-  <div class="field">
+        <% end %>
+    </ul>
+</div>
+<% end %>
+<p>
+    Brand
+</p>
+<div class="field">
     <%= f.label :company_name %>
     <%= f.text_field :first_name %>
-  </div>
+</div>
 
-  <div class="field">
+<div class="field">
     <%= f.label :category %>
     <%= f.text_field :category %>
-  </div>
+</div>
 
-  <div class="field">
+<div class="field">
     <%= f.label :summary %>
     <%= f.text_area :summary %>
-  </div>
+</div>
 
-  <div class="actions">
+<div class="actions">
     <%= f.submit %>
-  </div>
+</div>
 <% end %>
