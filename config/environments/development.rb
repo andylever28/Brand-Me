@@ -28,7 +28,17 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
 
-
+config.paperclip_defaults = {
+          storage:                      :s3,
+          s3_region:                    ENV["AWS_REGION"],
+          s3_credentials: {
+              s3_host_name:             ENV["AWS_S3_HOST_NAME"],
+              bucket:                   ENV["AWS_S3_BUCKET"], 
+              access_key_id:            ENV["ACCESS_KEY"],
+              secret_access_key:        ENV["SECRET_ACCESS_KEY"],
+              s3_permissions:           'public-read'
+          }
+      }
 
 
 

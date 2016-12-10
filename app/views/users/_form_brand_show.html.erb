@@ -1,5 +1,5 @@
  <p> <strong>
-  <%= @user.first_name %> -   <%= @user.category %>
+  <%= @user.first_name %> - <%= @user.category %>
 </strong>
 </p>
 
@@ -7,7 +7,7 @@
   <%= mail_to(@user.email, name = nil) %>
 </p>
 
-
+	<p> <%= image_tag @user.avatar.url(:medium) %> </p>
 <p>
   <%= @user.summary %>
 </p>

@@ -4,61 +4,28 @@
 
 body { padding-top: 30px; }
 
-.searchresults,
-.tweetresults {
-	height: 9em;
-	margin-bottom: 0em;
-	text-align: center;
-}
-
-.searchrow {
-	margin-top: 1em;
-}
-.tweetresults {
-	border-bottom: 1px solid #e1e8ed;
-	margin-bottom: 1em;
-}
-
-.searchresults p,
-.tweetresults p {
-	margin: 0em;
-	margin-bottom: 0.5em;
-	font-size: 1.2em;	
-	color: #333333;
-	font-family: "Helvetica Neue"
-}
-
-.searchform {
-	display: flex;
-	justify-content: space-around;
-}
-
 div.field {
 	margin-bottom: 1.5em;
 }
 
-p.searchresname {
-	font-size: 1.4em;
-	color: black;
-	font-weight: bold;
-} 
 
-span#searchresbold {
-	font-size: 1em;
-	font-weight: bold;
-	color: black;
-	font-family: "Helvetica Neue"
-}
-.searchresname a {
-	font-size: 1em;
-	color: #09A0DB;
-}
 
-.searchresname a:hover {
-	color: black;
-	background: transparent;
+.searchrow {
+}
+.searchimgdiv {
+	display: flex;
+	justify-content: space-around;
+	height: 5em;
+	margin: 0em;
+
+}
+.searchimg {
+	width: 5em;
+	padding: 0em;
 }
 .searchform {
+	display: flex;
+	justify-content: space-around;
 	flex-direction: column;
 	margin: auto;
 }
@@ -69,72 +36,97 @@ span#searchresbold {
 	font-size: 1em;
 	font-weight: bold;
 }
-.searchhead p {
-	text-align: center;
-	font-size: 3em;
-	font-family: "Helvetica Neue";
-	color: black;
+
+.resultscol {
+	margin-top: 1.8em;
 }
 
-#searchdefaultmessage {
-	text-align: center;
-	font-size: 2.2em;
-	color: #333333;
-	font-family: "Helvetica Neue"
+
+.searchinfo {
+	box-shadow: 0 5px 5px -5px #333;
+	margin: 0 0 2em 0;
+	height: 5em;
 }
 
-.searchicon {
-	width: 60%;
-	margin-left: 20%;
-}
-	
-.showinfoamb p {
-	font-family: "Helvetica Neue";
-	margin: 0.2em;
-	text-align: center;
+
+#searchusername {
+	font-family: "Muli", sans-serif;
 	font-size: 1em;
+	margin: 0.5em 0em;
+	text-align: center;
 	font-weight: bold;
 }
 
-p#showname {
-	font-size: 1.3em;
-	font-family: "Helvetica Neue";
+#searchtwitterinfo {
+	font-family: "Muli", sans-serif;
+	font-size: 2em;
+	margin: 0.5em 0em;
+	text-align: center;
+	color: black;
+}
+#searchusername a {
+	color: #0084B4;
+	
 }
 
-.imgdiv a,
-.imgdiv a:hover {
-	background: transparent;
+#searchusername a:hover {
+	background-color: transparent;
+	color: #1DA1F2;
 }
 
 .defaultimg {
-	width: 76%;
-	margin-left: 12%;
+	width: 60%;
+	margin-left: 20%;
 }
 
-#twitterform {
-		text-align: center;
-	}
+.showname {
+	text-align: center;
+	font-family: "Muli", sans-serif;
+	margin: 0.5em;
+}
 
-	.tweetframe p {
-		text-align: center;
-		font-family: "Helvetica Neue";
-		margin: 0em;
-	}
+#showtwitterstats
+ {
+	font-family: "Muli", sans-serif;
+	text-align: center;
+	margin: 0.5em;
+	font-size: 1.2em;
+	font-weight: bold;
+}
 
-
+.userinfo {
+	height: 227px;
+}
 @media (min-width: 768px) {
 
-.searchresults,
-.tweetresults,
-.imgdiv {
-	border-bottom: 1px solid #e1e8ed;
+.searchimgdiv,
+.searchinfo {
+	height: 10em;
+	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 	margin-bottom: 1em;
-	text-align: left;
-	}
+}
 
-	.searchicon {
-		width: 90%;
-	}
+#searchtwitterinfo {
+	font-size: 3em;
+	text-align: left;
+	margin-top: 1em;
+}
+
+#searchusername {
+	margin-top: 0.7em;
+	font-size: 1.5em;
+	text-align: left;
+}
+.searchimg {
+	width: 55%;
+	height: 9em;
+	margin-top: 0.5em;
+	padding: 0em;
+}
+
+.showname {
+	font-size: 1.5em;
+}
 }
 
 @media (min-width: 900px) {
@@ -145,9 +137,7 @@ p#showname {
 	margin-top: 2em;
 	}
 
-.showinfoamb p {
-	text-align: center;
-	}
+
 }
 
 

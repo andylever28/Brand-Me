@@ -1,6 +1,6 @@
-  <div class="container">
-    <div class="searchrow row">
-      <div class="col-xs-12 col-md-3">
+<div class="container">
+  <div class="searchrow row">
+    <div class="col-md-3">
         <%= form_tag('/users/search', method: "post") do %>
           <div class="searchform">
             <p>Search</p>
@@ -21,39 +21,32 @@
             </div>
           </div>
         <% end %>
-      </div><!--END col-xs-12 col-md-3-->
+    </div><!--END col-xs-12 col-md-3-->
 
-      <div class="col-xs-12 col-md-9">
-        <div class="resultsrow row">
-        <% if !@users.empty? %>
-          <% @users.each do |user| %>
-            <% if user.twitter_datum.first %>
-              <div class="imgdiv col-xs-12 col-sm-2">
-              <% if user.twitter_datum.first.url %>
-               <%= link_to image_tag(user.twitter_datum.first.url, class: "searchicon"), user %>
-               <% end %>
-              </div>
-
-
-              <%= div_for(user, class: "searchresults col-xs-12 col-sm-5") do %>
-                <p class="searchresname"> <%= user.first_name %> <%= user.last_name %> - <%= link_to 'View', user%> </p>
-                <p> <%= user.category %> - <%= user.gender%> - <%= user.age %> years old </p>
-                <p> <span id="searchresbold">  Bio: </span> <%= user.summary %></p>
-              <% end %>
-            
-              <%= div_for(user, class: "tweetresults col-xs-12 col-sm-5") do %>
-                <% user.twitter_datum.each do |twitstat| %>
-                  <p class="searchresname"><%= link_to("@"+twitstat.screen_name, "https://twitter.com/"+twitstat.screen_name)%> </span> </p>
-                  <p> <%= twitstat.followers_count %> Followers </p>
-                  <p> <%= twitstat.statuses_count %> Tweets </p>
-                <% end %>
-              <% end %>
-            <% end %>
+    <div class="resultscol col-md-9">
+      <div class="row">
+      <% if !@users.empty? %>
+        <% @users.each do |user| %>
+          <% if user.twitter_datum.first %>
+            <div class="searchimgdiv col-sm-4">
+              <%= image_tag("default-avatar.png", class: "searchimg") %>        
+            </div>
+            <div class="searchinfo col-sm-8">  
+              <p id="searchusername"> <%= user.first_name[0] %>. <%= user.last_name %> || <%= user.gender %> - <%= user.age %> - <%= user.category %> || <%= link_to 'View', user %> </p>
+                  <% user.twitter_datum.each do |twitter| %>
+                    <p id="searchtwitterinfo"> <%= number_with_delimiter(twitter.followers_count) %> Followers </p>
+                  <% end %>
+            </div>
           <% end %>
-          <% else %>
-          <p id="searchdefaultmessage"> Search results will return here </p>
-          <%end%>
+        <% end %>
+      <% else %>
+        <div class=col-xs-12>
+          <p> Search Results will return here </p>
         </div>
-      </div><!--END col-xs-12 col-md-9-->
-    </div>
-  </div><!--END CONTAINER-->
+      <% end %>
+      </div>
+    </div> <!-- End row -->
+  </div> <!-- End col-md-9 -->
+</div><!--END CONTAINER-->
+
+

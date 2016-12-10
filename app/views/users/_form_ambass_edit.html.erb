@@ -12,6 +12,11 @@
   <% end %>
   <p> Amb </p>
   <div class="field">
+    <%= f.label :profile_image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
