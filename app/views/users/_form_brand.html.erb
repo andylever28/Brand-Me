@@ -1,5 +1,7 @@
 <!-- this form is to sign up new Brands  -->
-
+<% if params[:kind] != nil %>
+<% session[:kind] = params[:kind] %>
+<%end%>
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -38,7 +40,7 @@
       <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)%>
   </div>
 
-    <%= f.hidden_field(:kind, :value => params[:kind])%>
+    <%= f.hidden_field(:kind, :value => session[:kind])%>
         <%= f.hidden_field(:age, :value => "X")%>
     <%= f.hidden_field(:gender, :value => "X")%>
     <%= f.hidden_field(:last_name, :value => "(brand)")%>

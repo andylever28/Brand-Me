@@ -1,5 +1,7 @@
 <!-- this form is to sign up new Ambassadors  -->
-
+<% if params[:kind] != nil %>
+<% session[:kind] = params[:kind] %>
+<%end%>
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -49,7 +51,7 @@
     <%= f.select :gender, %w(M F)%>
 </div>  
 
-    <%= f.hidden_field(:kind, :value => params[:kind])%>
+    <%= f.hidden_field(:kind, :value => session[:kind])%>
 
   <div class="actions">
     <%= f.submit %>
