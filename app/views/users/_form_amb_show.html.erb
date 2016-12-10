@@ -8,9 +8,10 @@
 			
 				<% if @current_user.kind == "Ambassador" && @current_user.twitter_datum.first == nil  %>
 					<%= form_tag('/users/'+current_user.id.to_s+'/twitter_datum', method: "post", id: "twitterform") do %>
-					<%= label_tag(:q, "Please enter your twitter handle") %>
-					<%= text_field_tag(:q) %>
-					<%= submit_tag("Search", id: "btn") %>
+					<p id="addtwitter"> Your profile will not be searchable until a twitter account is added.
+					<%= text_field_tag(:q) %> 
+					<%= submit_tag("Add Twitter", id: "btn") %> </p>
+
 				<% end %>
 				<% else %>
 				<% @user.twitter_datum.each do |twit| %>
@@ -59,7 +60,6 @@
 				<a class="twitter-timeline" href="https://twitter.com/<%=@user.twitter_datum.first.screen_name%>" data-height="450"
 					>Tweets by 	</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
 					<% else %>
-					<p>User has not uploaded a twitter yet.</p>
 				<a class="twitter-timeline" href="https://twitter.com/jack" data-height="450"
 					>Tweets by 	</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>					<% end %>
 					</div>

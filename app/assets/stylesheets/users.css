@@ -10,6 +10,10 @@ div.field {
 	margin-bottom: 1.5em;
 }
 
+#addtwitter {
+	margin: 0em;
+	text-align: center;
+}
 
 .showinfoamb,
 .tweetframe {
@@ -183,6 +187,11 @@ margin-left: -25px;
 @media (min-width: 900px) {
 	.defaultimg {
 		margin-top: 1em;
+	}
+
+	#addtwitter {
+		font-size: 1.5em;
+		margin-top: 0.5em;
 	}
 
 .searchform {
