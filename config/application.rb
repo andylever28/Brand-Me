@@ -14,9 +14,9 @@ module Pitch1
   config.
   action_mailer.
   default_url_options = { host: 'https://brandmeetsambassador.herokuapp.com/' }
+      
 
-
-
-
+      
   end
 end
+

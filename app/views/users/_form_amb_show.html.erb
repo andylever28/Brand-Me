@@ -13,17 +13,16 @@
 		</div>
 		<div class="row">
 		<div class="col-xs-12">
-			<p id="showname">
+			<p class="showname">
 				<%= @user.first_name %> <%= @user.last_name %> || <%= mail_to(@user.email, name = nil) %>
 			</p>
-			<p>
+			<p class="showname">
+				<%= @user.gender %> - <%= @user.age %> years old - <%= @user.category %>
+			</p>
+			<p class="showname">
 				<%= @user.summary %>
 			</p>
 
-			<p>
-				<strong></strong>
-				<%= @user.gender %> - <%= @user.age %> years old - <%= @user.category %>
-			</p>		
 			<% if @current_user.kind == "Ambassador" && @current_user.twitter_datum.first == nil  %>
 					<%= form_tag('/users/'+current_user.id.to_s+'/twitter_datum', method: "post", id: "twitterform") do %>
 					<%= label_tag(:q, "Please enter your twitter handle") %>
@@ -32,8 +31,7 @@
 			<% end %>
 			<% else %>
 				<% @user.twitter_datum.each do |twit| %>
-				<p> 	</p>
-				<p> <%= twit.followers_count %> Followers || <%= twit.statuses_count %> Tweets</p>
+				<p id="showtwitterstats"> <%= twit.followers_count %> Followers || <%= twit.statuses_count %> Tweets</p>
 			<% end %>
 			<% end %>
 		</div>

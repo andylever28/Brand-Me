@@ -8,6 +8,11 @@ class User < ApplicationRecord
   validates :category, presence: true
   validates :kind, presence: true
 
+
+  has_attached_file :avatar, :styles => { :medium =>     "530x530#", :thumb => "100x100#" }, :default_url => "missing_:style.png"
+
+  validates_attachment :avatar, content_type: { content_type:     ["image/jpg", "image/jpeg", "image/png"] }
+
   # Not sure what this does.  It came from following Stefan's tutorial...
   def to_s
     "#{first_name} #{last_name}"

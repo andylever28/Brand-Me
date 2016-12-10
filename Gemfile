@@ -7,6 +7,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'omniauth-twitter'
 
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'mail'
 gem 'httparty'
 # need this for Twitter API call

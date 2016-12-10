@@ -2,13 +2,8 @@
     <%= params[:notice] %>
     <% end %> </p>
     
- <% if @current_user == @user %>
-    <% if @current_user.kind == "Brand" %>
-      <%= render 'form_brand_show', user: @current_user %>
-    <% else %>
-      <%= render 'form_amb_show', user: @current_user %>
-    <% end %>
+<% if @user.kind == "Brand" %>
+     <%= render 'form_brand_show', user: @user %>
 <% else %>
-    <%= render 'form_amb_show', user: @user %>
+      <%= render 'form_amb_show', user: @user %>
 <% end %>
-
