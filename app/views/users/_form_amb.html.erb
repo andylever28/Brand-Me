@@ -1,79 +1,75 @@
 <!-- this form is to sign up new Ambassadors  -->
 <div class="container">
-<div class="row">
-<div class="col-sm-6">
-<% if params[:kind] != nil %>
-<% session[:kind] = params[:kind] %>
-<%end%>
-<%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation"> 
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <div class="signupform row"> <!-- Beginrow -->
+    <div class="signupcol col-sm-6"> <!-- Begin signup form -->
+      <% if params[:kind] != nil %>
+      <% session[:kind] = params[:kind] %>
+      <%end%>
+      <%= form_for(user) do |f| %>
+      <% if user.errors.any? %>
+      <div id="error_explanation"> 
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <ul>
+          <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
+      <h1 class="signup"> 
+        <% if params[:kind] != nil %>
+          <% session[:kind] = params[:kind] %>
+        <%end%>
+          <%= session[:kind] %> Sign Up</h1>
+        <div class="field">
 
-    <%= f.label :first_name %> <br>
-    <%= f.text_field :first_name %>
+          <%= f.text_field :first_name, placeholder: "Name" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :email, placeholder: "E-mail Address"%>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password, placeholder: "Password" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password_confirmation, placeholder: "Re-type password" %>
+        </div>
+        <div class="formbundler">
+         <div class="field">
+
+          <%= f.label :age  %> <br>
+          <%= f.select :age, %w(Under\ 25 26-35 36-45 46-55 55+)%>
+        </div>
+        <div class="field">
+          <%= f.label :category %> <br>
+          <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)%>
+        </div>
+
+
+        <div class="field">
+
+          <%= f.label :gender %> <br>
+          <%= f.select :gender, %w(M F)%>
+        </div>
+
+      </div>  
+      <%= f.hidden_field(:kind, :value => session[:kind])%>
+      <div class="formbundler">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+        <p class="oppositekindlink"> <%= link_to "Click here for Brand account.", :controller => "users", :action => "new", :kind => "Brand" %>  </p></div>
+        <% end %>
+      </div> <!-- End sign up form -->
+
+
+      <div class="signupcol col-sm-6"> <!-- signup info -->
+        <%= image_tag "multi-user.png", id: "multiuser" %>
+        <p class="signupinfo"> Create an account. Get noticed. Profit. <u>BrandME</u> gives you all tools to get noticed by the right brands. </p>
+      </div>
+    </div> <!-- end row -->
   </div>
-
-  <div class="field">
-    <%= f.label :last_name %> <br>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %> <br>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %> <br>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %> <br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div id="formdropdown">
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)%>
-    </div>
-      <div class="field">
-
-    <%= f.label :age  %> <br>
-    <%= f.select :age, %w(Under\ 25 26-35 36-45 46-55 55+)%>
-    </div>
-      <div class="field">
-
-    <%= f.label :gender %> <br>
-    <%= f.select :gender, %w(M F)%>
-</div>  
-  </div>
-    <%= f.hidden_field(:kind, :value => session[:kind])%>
- 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
- <p> Want to sign up as a <%= link_to "Brand? Click here", :controller => "users", :action => "new", :kind => "Brand" %></p>
- <p> Already a member? <%= link_to "Log In", login_path %></p>
-<% end %>
-</div>
-
-
-  <div class="col-sm-6">
-    <%= image_tag "multi-user.png", id: "multiuser" %>
-  </div>
-
-
-
-</div>
-</div>
