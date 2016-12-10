@@ -1,54 +1,66 @@
 <!-- this form is to sign up new Brands  -->
-<% if params[:kind] != nil %>
-<% session[:kind] = params[:kind] %>
-<%end%>
-<%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="container">
+  <div class="signupform row"> <!-- Beginrow -->
+    <div class="signupcol col-sm-6"> <!-- Begin signup form -->
+ <% if params[:kind] != nil %>
+      <% session[:kind] = params[:kind] %>
+      <%end%>
+      <%= form_for(user) do |f| %>
+      <% if user.errors.any? %>
+      <div id="error_explanation"> 
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <ul>
+          <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :company_name %>
-    <%= f.text_field :first_name %>
-  </div>
+      <h1 class="signup"> 
+        <% if params[:kind] != nil %>
+          <% session[:kind] = params[:kind] %>
+        <%end%>
+          <%= session[:kind] %> Sign Up
+      </h1>
 
+        <div class="field">
+          <%= f.text_field :first_name, placeholder: "Company Name" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+        <div class="field">
+          <%= f.text_field :email, placeholder: "E-mail Address"%>
+        </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+        <div class="field">
+          <%= f.password_field :password, placeholder: "Password" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= f.label :category %>
-      <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)%>
-  </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, placeholder: "Re-type password" %>
+        </div>
+       <div class="formbundler">
+        <div class="field">
+          <%= f.label :category %> <br>
+          <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)%>
+        </div>
 
     <%= f.hidden_field(:kind, :value => session[:kind])%>
         <%= f.hidden_field(:age, :value => "X")%>
     <%= f.hidden_field(:gender, :value => "X")%>
-    <%= f.hidden_field(:last_name, :value => "(brand)")%>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-   <p> Want to sign up as an <%= link_to "Ambassador? Click here", 
-   :controller => "users", :action => "new", :kind => "Ambassador" %></p>
-   <p> Already a member? <%= link_to "Log In", login_path %></p>
-<% end %>
+        <div class="brandactions">
+          <%= f.submit %>
+        </div>
+       </div>
+        <p class="oppositekindlink"> <%= link_to "Click here for an Ambassador account.", :controller => "users", :action => "new", :kind => "Ambassador" %>  </p>
+ 
+        <% end %>
+        </div>
+        <div class="signupcol col-sm-6"> <!-- signup info -->
+        <%= image_tag "seo-icon-2.png", id: "multiuser" %>
+        <p class="signupinfo"> Find your Ambassador. Grow your Brand. <br><u> BrandME</u> offers  a unique search tool to help connect with the right Ambassadors. </p>
+      </div> <!-- end sign up info -->
+      </div> <!-- End sign up form -->
+    
+    </div>

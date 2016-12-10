@@ -1,34 +1,97 @@
+.signupform {
+	background-color: white;
+	margin-top: 0em;
+	box-shadow: 0 5px 5px -5px #333;
+}
+
 .field label {
 	margin-left: 0.2em;
 }
 
 h1.signup {
-	text-align: center;
+	text-align: left;
+	font-size: 2.5em;
+	margin: 1em 0em;
 }
 
 
 #multiuser {
 	width: 50%;
 	margin-left: 25%;
+	color: #1dcaff;
 }
 
-.field {
-	width: 30%;
-	margin-bottom: 0.5em;
-}
+.field input {
+	width: 80%;
+	margin-left: 10%;
+		margin-bottom: 1em;
 
-#formdropdown {
+}
+.formbundler {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 }
 
-#formdropdown div {
-	width: 25%;
+.formbundler div.field {
+	width: 22%;
+	margin-left: 1em;
+	margin-bottom: 1em;
 }
+
+.oppositekindlink {
+	margin-left: 1em;
+	font-size: 1.2em;
+}
+
+.signupinfo {
+	font-family: "Muli", sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
+	color: #65CCEF;
+}
+
+.formbundler a {
+	color: #1dcaff;
+}
+
+.formbundler a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
 @media (min-width: 768px) {
-.field label {
-	margin-left: 0.2em;
+
+	
+
 }
+
+@media (min-width: 900px) {
+
+	.signupform {
+		margin-top: 3em;
+	}
+
+	.brandactions input {
+		margin-top: 1.5em;
+	}
+.field input {
+		width: 55%;
+		margin-left: 0.5em;
+	}
+
+	.formbundler {
+		justify-content: flex-start;
+	}
+
+	.formbundler div.field,
+	.formbundler input {
+		margin-left: 0.5em;
+}
+
+	.signupcol {
+		height: 33em;
+	}
 
 }
