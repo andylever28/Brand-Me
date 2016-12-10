@@ -1,10 +1,12 @@
 	.navbar-fixed-top {
 	background: black;
-	color: red; /*This is what fills in background on navbar*/
+
+/*This is what fills in background on navbar*/
 }
 
-body { padding-top: 30px; 
-background-color: #F5F8FA;}
+body { padding-top: 50px; 
+background-color: #F5F8FA;
+}
 
 div.field {
 	margin-bottom: 1.5em;
@@ -140,9 +142,9 @@ div.field {
 	.toptwitter {
 		height: 7em;
 	}
-	.container {
+	/*.container {
 margin-left: -25px;
-}
+}*/
 .searchimgdiv,
 .searchinfo {
 	height: 12em;
@@ -153,13 +155,13 @@ margin-left: -25px;
 #searchtwitterinfo {
 	font-size: 3em;
 	text-align: left;
-	margin-top: 1.5em;
+	margin-top: 0.5em;
 }
 
 
 #searchusername,
 #nosearchres {
-	margin-top: 1em;
+	margin-top: 1.5em;
 	font-size: 1.5em;
 	text-align: left;
 }
@@ -180,7 +182,7 @@ margin-left: -25px;
 
 
 #showtwitterstats {
-	font-size: 2.5em;
+	font-size: 2em;
 }
 }
 
@@ -206,7 +208,7 @@ margin-left: -25px;
 
 .showinfoamb,
 .tweetframe {
-	height: 500px;
+	height: 600px;
 }
 
 }
