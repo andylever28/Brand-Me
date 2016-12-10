@@ -1,4 +1,4 @@
-<%= form_for(user) do |f| %>
+<%= form_for(user, html: { multipart: true } )  do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,7 +13,7 @@
   <p> Amb </p>
   <div class="field">
     <%= f.label :profile_image %>
-    <%= f.file_field :image %>
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :summary %>
-    <%= f.text_area :summary %>
+    <%= f.text_area :summary, :size=>"60x3", placeholder: "Summary can be a max length of 140 characters", :maxlength=>"140" %>
   </div>
 
   <div class="field">
