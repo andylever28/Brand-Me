@@ -27,14 +27,13 @@
         <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar-fixed-top">
+        <nav class="navbar-fixed-top" id="brandme-navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
                         <span class="glyphicon glyphicon-menu-hamburger"></span>
                     </button>
                     <ul class="nav navbar-nav">
-
                         <% if @current_user %>
                         <li>
                             <%= link_to @current_user.first_name, @current_user, class: "navbar-brand" %>

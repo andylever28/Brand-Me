@@ -16,6 +16,30 @@
 
 
  a.navbar-brand {
-     color: #337AB7;
- font-family: "Muli", sans-serif;
+     color: #65CCEF;
+     font-family: "Muli", sans-serif;
  }
+
+ a:hover, a:visited, a:link, a:active
+ {
+     text-decoration: none;
+ }
+
+ #brandme-navbar{
+   background-color: #111;
+   padding-left: 2rem;
+ }
+
+#bs-example-navbar-collapse-9 .navbar-nav a{
+   color: #65CCEF;
+   font-family: "Muli", sans-serif;
+ }
+
+.navbar-nav li a{
+  font-size: .9em;
+}
+
+.glyphicon-menu-hamburger{
+  color: #65CCEF;
+
+}

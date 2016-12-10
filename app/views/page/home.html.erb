@@ -10,13 +10,13 @@
 					<!-- <div class='col-md-6 col-sm-8 col-xs-12 center-block' style='margin-top:6em;' id="homepage-button-div"> -->
 					<div id='homepage-buttons-div'>
 						<div class='col-md-6' style='text-align:center !important; margin-top:1em'>
-								<%= link_to "Ambassador", :controller => "users",:action => "new", :kind => "Ambassador", class: "homebtns" do %>
+								<%= link_to :controller => "users",:action => "new", :kind => "Ambassador", class: "homebtns" do %>
 									<div id="amb-button" class='col-md-11 center-block new-user-button' style='padding: 10px' nowrap>Ambassador
 									</div>
 								<% end %>
 						</div>
 						<div class='col-md-6' style='text-align:center !important; margin-top:1em'>
-								<%= link_to "Brand", :controller => "users", :action => "new", :kind => "Brand", class: "homebtns" do %>
+								<%= link_to :controller => "users", :action => "new", :kind => "Brand", class: "homebtns" do %>
 									<div id="brand-button" class='col-md-11 center-block new-user-button' style='padding: 10px' nowrap>Brand
 									</div>
 								<% end %>
