@@ -1,27 +1,33 @@
 	.navbar-fixed-top {
-	background: white; /*This is what fills in background on navbar*/
+	background: black;
+	color: red; /*This is what fills in background on navbar*/
 }
 
-body { padding-top: 30px; }
+body { padding-top: 30px; 
+background-color: #F5F8FA;}
 
 div.field {
 	margin-bottom: 1.5em;
 }
 
 
-
-.searchrow {
+.showinfoamb,
+.tweetframe {
+	background-color: white;
 }
+
 .searchimgdiv {
 	display: flex;
 	justify-content: space-around;
 	height: 5em;
 	margin: 0em;
+	background-color: white;
 
 }
 .searchimg {
 	width: 5em;
 	padding: 0em;
+	border-radius: 7px;
 }
 .searchform {
 	display: flex;
@@ -42,17 +48,19 @@ div.field {
 }
 
 
-.searchinfo {
+.searchinfo,
+.nosearch {
 	box-shadow: 0 5px 5px -5px #333;
-	margin: 0 0 2em 0;
+	margin: 0 0 1em 0;
 	height: 5em;
+	background-color: white;
 }
 
 
 #searchusername {
 	font-family: "Muli", sans-serif;
 	font-size: 1em;
-	margin: 0.5em 0em;
+	margin: 0em;
 	text-align: center;
 	font-weight: bold;
 }
@@ -63,6 +71,12 @@ div.field {
 	margin: 0.5em 0em;
 	text-align: center;
 	color: black;
+}
+
+#nosearchres {
+		font-family: "Muli", sans-serif;
+		font-size: 1em;
+		margin: 0.5em;
 }
 #searchusername a {
 	color: #0084B4;
@@ -77,6 +91,8 @@ div.field {
 .defaultimg {
 	width: 60%;
 	margin-left: 20%;
+	border: 2px solid #fff;
+	border-radius: 7px;
 }
 
 .showname {
@@ -97,8 +113,32 @@ div.field {
 .userinfo {
 	height: 227px;
 }
-@media (min-width: 768px) {
 
+.showamb {
+		box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+}
+
+#twitterlogo {
+	height: 1.2em;
+
+}
+
+.toptwitter {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 0.3em;
+	height: 5em;
+	background-color: white;
+}
+@media (min-width: 768px) {
+	
+	.toptwitter {
+		height: 7em;
+	}
+	.container {
+margin-left: -25px;
+}
 .searchimgdiv,
 .searchinfo {
 	height: 12em;
@@ -112,10 +152,16 @@ div.field {
 	margin-top: 1.5em;
 }
 
-#searchusername {
+
+#searchusername,
+#nosearchres {
 	margin-top: 1em;
 	font-size: 1.5em;
 	text-align: left;
+}
+
+#nosearchres{
+	text-align: center;
 }
 .searchimg {
 	width: 55%;
@@ -127,9 +173,17 @@ div.field {
 .showname {
 	font-size: 1.5em;
 }
+
+
+#showtwitterstats {
+	font-size: 2.5em;
+}
 }
 
 @media (min-width: 900px) {
+	.defaultimg {
+		margin-top: 1em;
+	}
 
 .searchform {
 	flex-direction: column;
@@ -137,6 +191,14 @@ div.field {
 	margin-top: 2em;
 	}
 
+.container {
+	margin: 0 auto;
+}
+
+.showinfoamb,
+.tweetframe {
+	height: 500px;
+}
 
 }
 

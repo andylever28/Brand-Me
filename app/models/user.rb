@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :kind, presence: true
 
 
-  has_attached_file :avatar, :styles => { :medium =>     "530x530#", :thumb => "100x100#" }, :default_url => "missing_:style.png"
+  has_attached_file :avatar, :styles => { :medium =>     "530x530#", :thumb => "100x100#" }, :default_url => "assets/images/:style/missing.png"
 
   validates_attachment :avatar, content_type: { content_type:     ["image/jpg", "image/jpeg", "image/png"] }
 
