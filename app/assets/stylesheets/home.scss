@@ -1,0 +1,49 @@
+#homepage-buttons-div{
+  margin: auto;
+  float: none;
+  display:block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1.8em;
+  text-decoration: none;
+  padding-top: 60px;
+}
+
+.homepage-text{
+  padding-top: 8%;
+}
+
+.large-name{
+  color: white;
+}
+
+#bs-example-navbar-collapse-9 {
+  background-color: transparent;
+}
+
+#welcome-pg-alert{
+  color: red;
+}
+
+#top-home-photo{
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-image: url(top-home-photo-50.jpg);
+  /*background: linear-gradient(rgba(0,0,0, .8), rgba(0,0,0,.8)), url("top-home-photo.jpg");*/
+  background-repeat: no-repeat;
+  padding-top: 45px;
+}
+
+
+.new-user-button{
+  border-radius: 7px;
+  border: solid 4.5px;
+  transition: all 0.1s ease 0s;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, .6);
+  &:hover {
+    color: #65CCEF;
+  }
+}

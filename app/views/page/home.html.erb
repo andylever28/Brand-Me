@@ -4,20 +4,22 @@
 	<div id="background-filtering-div">
 		<section class="homepage-content container-fluid text-center welcome-message">
 			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12" style='text-align:center'>
+				<div class="col-md-12 col-sm-12 col-xs-12 homepage-text" style='text-align:center'>
 					<h3 class='large-name upcase' style='font-size:4em; font-weight:bold'>BRAND ME</h3>
-					<h4 class='large-name upcase' style='font-size:2em; text-align:center'>folks with a following, ready for your brand</h4>
+					<h4 class='large-name upcase' style='font-size:2.5em; text-align:center'>folks with a following, ready for your brand</h4>
 					<!-- <div class='col-md-6 col-sm-8 col-xs-12 center-block' style='margin-top:6em;' id="homepage-button-div"> -->
 					<div id='homepage-buttons-div'>
 						<div class='col-md-6' style='text-align:center !important; margin-top:1em'>
-							<div class='col-md-11 center-block' style='padding: 10px; background-color:#4e4f51' nowrap>
-								<%= link_to "Ambassador", :controller => "users",:action => "new", :kind => "Ambassador", class: "homebtns"%>
-							</div>
+								<%= link_to "Ambassador", :controller => "users",:action => "new", :kind => "Ambassador", class: "homebtns" do %>
+									<div id="amb-button" class='col-md-11 center-block new-user-button' style='padding: 10px' nowrap>Ambassador
+									</div>
+								<% end %>
 						</div>
 						<div class='col-md-6' style='text-align:center !important; margin-top:1em'>
-							<div class='col-md-11 center-block' style='padding: 10px; background-color:#4e4f51'>
-								<%= link_to "Brand", :controller => "users", :action => "new", :kind => "Brand", class: "homebtns" %>
-							</div>
+								<%= link_to "Brand", :controller => "users", :action => "new", :kind => "Brand", class: "homebtns" do %>
+									<div id="brand-button" class='col-md-11 center-block new-user-button' style='padding: 10px' nowrap>Brand
+									</div>
+								<% end %>
 						</div>
 					</div>
 					<!-- </div> -->
