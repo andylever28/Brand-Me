@@ -1,3 +1,34 @@
 .field label {
 	margin-left: 0.2em;
 }
+
+h1.signup {
+	text-align: center;
+}
+
+
+#multiuser {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.field {
+	width: 30%;
+	margin-bottom: 0.5em;
+}
+
+#formdropdown {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+#formdropdown div {
+	width: 25%;
+}
+@media (min-width: 768px) {
+.field label {
+	margin-left: 0.2em;
+}
+
+}
