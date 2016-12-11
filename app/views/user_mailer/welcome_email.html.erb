@@ -1,7 +1,10 @@
-<h1>Welcome to My Website, <%= @user.first_name %></h1>
-  <p>
-    You have successfully registered on BrandMeetsAmbassador.com,
-    with the email address: <%= @user.email %>.<br>
-  </p>
-  <p>To login, just click <%= @url %> .</p>
-  <p>Have a great day!</p>
+<h1>Welcome to BrandMe,
+    <%= @user.first_name %>!</h1>
+<p>
+    You registered with with the email address:
+    <%= @user.email %>.<br>
+</p>
+<p>You can login
+    <a href="https://brandmeetsambassador.herokuapp.com/login">by clicking here</a>
+</p>
+<p>Have a great day!</p>
