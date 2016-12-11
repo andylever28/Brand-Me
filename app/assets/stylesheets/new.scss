@@ -92,7 +92,7 @@ h1.signin {
 }
 
 #signinform-top {
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 .login-submit-button {
@@ -107,4 +107,8 @@ h1.signin {
         color: #65CCEF;
         text-decoration: none;
     }
+}
+
+li.list-group-item{
+  text-align: center;
 }

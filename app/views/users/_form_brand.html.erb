@@ -7,7 +7,7 @@
       <%end%>
       <%= form_for(user) do |f| %>
       <% if user.errors.any? %>
-      <div id="error_explanation"> 
+      <div id="error_explanation">
         <h3><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h3>
 
         <ul>
@@ -17,11 +17,11 @@
         </ul>
       </div>
       <% end %>
-      <h1 class="signup"> 
+      <h1 class="signup">
         <% if params[:kind] != nil %>
           <% session[:kind] = params[:kind] %>
         <%end%>
-          <%= session[:kind] %> Sign Up
+          <%= session[:kind] %> <br>Sign Up
       </h1>
 
         <div class="field">
@@ -54,7 +54,7 @@
         </div>
        </div>
         <p class="oppositekindlink"> <%= link_to "Click here for an Ambassador account.", :controller => "users", :action => "new", :kind => "Ambassador" %>  </p>
- 
+
         <% end %>
         </div>
         <div class="signupcol col-sm-6"> <!-- signup info -->
@@ -62,5 +62,5 @@
         <p class="signupinfo"> Find your Ambassador. Grow your Brand. <br><u> BrandME</u> offers  a unique search tool to help connect with the right Ambassadors. </p>
       </div> <!-- end sign up info -->
       </div> <!-- End sign up form -->
-    
+
     </div>

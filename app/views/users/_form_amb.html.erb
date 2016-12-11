@@ -7,7 +7,7 @@
       <%end%>
       <%= form_for(user) do |f| %>
       <% if user.errors.any? %>
-      <div id="error_explanation"> 
+      <div id="error_explanation">
         <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
         <ul>
@@ -17,11 +17,11 @@
         </ul>
       </div>
       <% end %>
-      <h1 class="signup"> 
+      <h1 class="signup">
         <% if params[:kind] != nil %>
           <% session[:kind] = params[:kind] %>
         <%end%>
-          <%= session[:kind] %> Sign Up</h1>
+          <%= session[:kind] %> <br>Sign Up</h1>
         <div class="field">
 
           <%= f.text_field :first_name, placeholder: "Name" %>
@@ -56,7 +56,7 @@
           <%= f.select :gender, %w(M F)%>
         </div>
 
-      </div>  
+      </div>
       <%= f.hidden_field(:kind, :value => session[:kind])%>
       <div class="formbundler">
         <div class="actions">
