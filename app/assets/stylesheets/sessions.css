@@ -1,6 +1,6 @@
 .signupform {
 	background-color: white;
-	margin-top: 0em;
+	margin-top: 3em;
 	box-shadow: 0 5px 5px -5px #333;
 }
 
@@ -14,7 +14,9 @@ h1.signup {
 	margin: 1em 0em;
 }
 
-
+div.field {
+	margin-top: 1em;
+}
 #multiuser {
 	width: 50%;
 	margin-left: 25%;
@@ -30,7 +32,7 @@ h1.signup {
 .formbundler {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: space-around;
 }
 
 .formbundler div.field {
@@ -61,6 +63,10 @@ h1.signup {
 	text-decoration: underline;
 }
 
+.brandactions input {
+		margin-top: 1.5em;
+	}
+
 @media (min-width: 768px) {
 
 	
@@ -70,12 +76,9 @@ h1.signup {
 @media (min-width: 900px) {
 
 	.signupform {
-		margin-top: 3em;
+		margin-top: 5em;
 	}
 
-	.brandactions input {
-		margin-top: 1.5em;
-	}
 .field input {
 		width: 55%;
 		margin-left: 0.5em;
@@ -90,8 +93,6 @@ h1.signup {
 		margin-left: 0.5em;
 }
 
-	.signupcol {
-		height: 33em;
-	}
+	
 
 }

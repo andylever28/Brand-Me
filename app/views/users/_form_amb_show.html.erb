@@ -1,67 +1,67 @@
 <div class="showamb container">
 	<div class="row"> 
 		<div class="toptwitter col-xs-12">
-		
+
 			
-				
-		
+
+
 			
-				<% if @current_user.kind == "Ambassador" && @current_user.twitter_datum.first == nil  %>
-					<%= form_tag('/users/'+current_user.id.to_s+'/twitter_datum', method: "post", id: "twitterform") do %>
-					<p id="addtwitter"> Your profile will not be searchable until a twitter account is added.
-					<%= text_field_tag(:q) %> 
-					<%= submit_tag("Add Twitter", id: "btn") %> </p>
+			<% if @current_user.kind == "Ambassador" && @current_user.twitter_datum.first == nil  %>
+			<%= form_tag('/users/'+current_user.id.to_s+'/twitter_datum', method: "post", id: "twitterform") do %>
+			<p id="addtwitter"> Your profile will not be searchable until a twitter account is added.
+				<%= text_field_tag(:q) %> 
+				<%= submit_tag("Add Twitter", id: "btn") %> </p>
 
 				<% end %>
 				<% else %>
 				<% @user.twitter_datum.each do |twit| %>
-				<p id="showtwitterstats"> <%= image_tag("twitter-logo.png", id: "twitterlogo") %> <%= @user.first_name %> <%= @user.last_name[0] %>. || @<%= twit.screen_name %> <br> <%= twit.followers_count %> Followers || <%= twit.statuses_count %> Tweets</p>
-			<% end %>
-			<% end %>
+				<p id="showtwitterstats"> <%= image_tag("twitter-logo.png", id: "twitterlogo") %> <%= @user.first_name %> || @<%= twit.screen_name %> <br> <%= twit.followers_count %> Followers || <%= twit.statuses_count %> Tweets</p>
+				<% end %>
+				<% end %>
 			</div>
-		
+
 		</div>
-	<div class="row"> 
-		<div class="showinfoamb col-md-6">
-		<div class="row">
-		<div class="ambinfo col-xs-12">
-		<% if @user.avatar_file_name %>
-				<%= image_tag @user.avatar.url(:medium), class: "defaultimg" %> 
-		<% else %>
-				<%= image_tag("default-avatar.png", class: "defaultimg") %>
-		<% end %>
-		</div>
-		</div>
-		<div class="row">
-		<div class="col-xs-12">
-			<p class="showname">
-				Contact: <%= mail_to(@user.email, name = nil) %>
-			</p>
-			<p class="showname">
-				<%= @user.gender %> - <%= @user.age %> years old - <%= @user.category %>
-			</p>
-			<p class="showname">
-				<%= @user.summary %>
-			</p>
-
-			
-		</div>
-		</div>
-</div>
+		<div class="row"> 
+			<div class="showinfoamb col-md-6">
+				<div class="row">
+					<div class="ambinfo col-xs-12">
+						<% if @user.avatar_file_name %>
+						<%= image_tag @user.avatar.url(:medium), class: "defaultimg" %> 
+						<% else %>
+						<%= image_tag("default-avatar.png", class: "defaultimg") %>
+						<% end %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<p class="showname">
+							Contact: <%= mail_to(@user.email, name = nil) %>
+						</p>
+						<p class="showname">
+							<%= @user.gender %> - <%= @user.age %> years old - <%= @user.category %>
+						</p>
+						<p class="showname">
+							<%= @user.summary %>
+						</p>
 
 
+					</div>
+				</div>
+			</div>
 
 
 
 
-		<div class="tweetframe col-xs-12 col-md-6">
-			<div>
-			<% if @user.twitter_datum.first %>
-				<a class="twitter-timeline" href="https://twitter.com/<%=@user.twitter_datum.first.screen_name%>" data-height="550"
-					>Tweets by 	</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
-					<% else %>
-				<a class="twitter-timeline" href="https://twitter.com/jack" data-height="550"
-					>Tweets by 	</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>					<% end %>
+
+
+			<div class="tweetframe col-xs-12 col-md-6">
+				<div>
+					<% if @user.twitter_datum.first %>
+					<a class="twitter-timeline" href="https://twitter.com/<%=@user.twitter_datum.first.screen_name%>" data-height="550"
+						>Tweets by 	</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+						<% else %>
+						<a class="twitter-timeline" href="https://twitter.com/jack" data-height="550"
+						>Tweets by 	</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>					<% end %>
 					</div>
 				</div>
 			</div>

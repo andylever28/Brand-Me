@@ -36,7 +36,7 @@
               <% end %>       
             </div>
             <div class="searchinfo col-sm-8">  
-              <p id="searchusername"> <%= user.first_name[0] %>. <%= user.last_name %> || <%= user.gender %> - <%= user.age %> - <%= user.category %> || <%= link_to 'View', user %> </p>
+              <p id="searchusername"> <%= user.first_name %> || <%= user.gender %> - <%= user.age %> - <%= user.category %> || <%= link_to 'View', user %> </p>
                   <% user.twitter_datum.each do |twitter| %>
                     <p id="searchtwitterinfo"> <%= number_with_delimiter(twitter.followers_count) %> Followers </p>
                   <% end %>
