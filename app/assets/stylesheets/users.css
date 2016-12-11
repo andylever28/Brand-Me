@@ -36,6 +36,7 @@ background-color: #F5F8FA;
 	justify-content: space-around;
 	flex-direction: column;
 	margin: auto;
+	margin-top: 5em;
 }
 
 .searchform p {
@@ -192,10 +193,14 @@ margin-left: -25px;
 		margin-top: 0.5em;
 	}
 
+	.resultsrow {
+		margin-top: 5em;
+	} 
+
 .searchform {
 	flex-direction: column;
 	position: fixed;
-	margin-top: 2em;
+	margin-top: 5em;
 	}
 
 .container {

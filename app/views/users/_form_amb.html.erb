@@ -60,7 +60,7 @@
       <%= f.hidden_field(:kind, :value => session[:kind])%>
       <div class="formbundler">
         <div class="actions">
-          <%= f.submit %>
+          <%= f.submit "Sign up!" %>
         </div>
         <p class="oppositekindlink"> <%= link_to "Click here for Brand account.", :controller => "users", :action => "new", :kind => "Brand" %>  </p></div>
         <% end %>
