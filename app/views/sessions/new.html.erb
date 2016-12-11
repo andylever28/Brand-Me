@@ -1,36 +1,52 @@
 <body>
-  <div class="container" id="login-card-container">
-    <!-- <div class="card">
-      <div class="card-img-container">
-        <%= image_tag "login-collage.jpg", id: "login-top-image" %>
-      </div> -->
+    <div class="container">
+        <div class="signinform row" id="signinform-top">
+            <!-- Beginrow -->
+            <div class="signincol col-sm-6">
+                <!-- Begin signin form -->
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <h1 class="signin">Sign in
+                    </hi>
+                  </li>
 
-      <div class="card col-xs-12">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-        <%= image_tag "login-collage.jpg", id: "login-top-image" %>
+                    <%= form_tag sessions_path do %>
+                    <li class="list-group-item">
+                        <%= label_tag :email %>
+                        <br>
+                        <%= text_field_tag :email %>
+                    </li>
+                    <li class="list-group-item">
+                        <%= label_tag :password %>
+                        <br>
+                        <%= password_field_tag :password %>
+                    </li>
+                    <li class="list-group-item actions">
+                        <%= submit_tag("Log In", :class => "login-submit-button" ) %>
+                    </li>
+                    <% end %>
+                </ul>
 
 
-        <div class="card-block">
-          <h4 class="card-title">Log In</h4>
-          <p class="card-text">BLAH BLAH, SOMETHING HERE :).</p>
+                <!-- <div class='col-md-6' style='text-align:center !important; margin-top:1em'>
+    								<%= link_to :controller => "sessions", :action => "new", :kind => "Brand", class: "homebtns" do %>
+    									<div id="brand-button" class='col-md-11 center-block new-user-button' style='padding: 10px' nowrap>Brand
+    									</div>
+    								<% end %>
+    						</div> -->
+
+
+
+
+            </div>
+            <!-- End form -->
+            <div class="signincol col-sm-6">
+                <!-- signin info -->
+                <%= image_tag "login-collage.jpg", id: "login-top-image" %>
+            </div>
+            <!-- end info-->
         </div>
-        <ul class="list-group list-group-flush">
-          <%= form_tag sessions_path do %>
-          <li class="list-group-item">
-            <%= label_tag :email %>
-            <br>
-            <%= text_field_tag :email %>
-          </li>
-          <li class="list-group-item">
-            <%= label_tag :password %>
-            <br>
-            <%= password_field_tag :password %>
-          </li>
-          <li class="list-group-item actions">
-            <%= submit_tag "Log In" %>
-          </li>
-          <% end %>
-        </ul>
+        <!-- end row -->
     </div>
-  </div>
+    <!--end container
 </body>
