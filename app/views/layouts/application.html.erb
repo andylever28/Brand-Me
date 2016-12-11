@@ -38,7 +38,7 @@
                         <li>
                             <%= link_to @current_user.first_name, @current_user, class: "navbar-brand" %>
                         </li>
-                        <% else %>
+                    <% else %>
                         <li>
                             <%= link_to "Welcome", root_path, class: "navbar-brand" %>
                         </li>
@@ -56,21 +56,21 @@
                         <% if @current_user %>
                         <li>
                             <a href=<%= edit_user_path(@current_user) %>>
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                Edit Profile</a>
+                                <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit Profile</a>
                         </li>
                         <li>
                             <a href=<%= logout_path %>>
-                                <span class="glyphicon glyphicon-minus"></span>
-                                Log Out</a>
+                                <span class="glyphicon glyphicon-minus"></span>&nbsp;&nbsp;Log Out</a>
                         </li>
                         <% elsif !@current_user %>
                         <li>
                             <a href=<%= login_path %>>
-                                <span class="glyphicon glyphicon-log-in"></span>
-                                Login</a>
+                                <span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Login</a>
                         </li>
                         <% end %>
+                        <li>
+                            <a href=<%= about_us_path %>><span class="glyphicon glyphicon-sunglasses"></span>&nbsp;&nbsp;About Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>

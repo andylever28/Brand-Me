@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get '/users/search' => 'users#search'
   post '/users/search' => 'users#search'
+  get 'about_us', to: 'page#about_us', as:'about_us'
 
   resources :users do
     resources :twitter_datum
