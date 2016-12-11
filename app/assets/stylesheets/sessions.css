@@ -1,98 +1,91 @@
 .signupform {
-	background-color: white;
-	margin-top: 3em;
-	box-shadow: 0 5px 5px -5px #333;
+    background-color: white;
+    margin-top: 3em;
+    box-shadow: 0 5px 5px -5px #333;
 }
 
 .field label {
-	margin-left: 0.2em;
+    margin-left: 0.2em;
 }
 
 h1.signup {
-	text-align: left;
-	font-size: 2.5em;
-	margin: 1em 0em;
+    text-align: left;
+    font-size: 2.5em;
+    margin: 1em 0em;
 }
 
 div.field {
-	margin-top: 1em;
+    margin-top: 1em;
 }
+
 #multiuser {
-	width: 50%;
-	margin-left: 25%;
-	color: #1dcaff;
+    width: 50%;
+    margin-left: 25%;
+    color: #1dcaff;
 }
 
 .field input {
-	width: 80%;
-	margin-left: 10%;
-		margin-bottom: 1em;
-
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 1em;
 }
+
 .formbundler {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .formbundler div.field {
-	width: 22%;
-	margin-left: 1em;
-	margin-bottom: 1em;
+    width: 22%;
+    margin-left: 1em;
+    margin-bottom: 1em;
 }
 
 .oppositekindlink {
-	margin-left: 1em;
-	font-size: 1.2em;
+    margin-left: 1em;
+    font-size: 1.2em;
 }
 
 .signupinfo {
-	font-family: "Muli", sans-serif;
-	font-weight: bold;
-	font-size: 1.5em;
-	text-align: center;
-	color: #65CCEF;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    color: #65CCEF;
 }
 
 .formbundler a {
-	color: #1dcaff;
+    color: #1dcaff;
 }
 
 .formbundler a:hover {
-	color: black;
-	text-decoration: underline;
+    color: black;
+    text-decoration: underline;
 }
 
 .brandactions input {
-		margin-top: 1.5em;
-	}
-
-@media (min-width: 768px) {
-
-	
-
+    margin-top: 1.5em;
 }
+
+@media (min-width: 768px) {}
 
 @media (min-width: 900px) {
-
-	.signupform {
-		margin-top: 5em;
-	}
-
-.field input {
-		width: 55%;
-		margin-left: 0.5em;
-	}
-
-	.formbundler {
-		justify-content: flex-start;
-	}
-
-	.formbundler div.field,
-	.formbundler input {
-		margin-left: 0.5em;
+    .signupform {
+        margin-top: 5em;
+    }
+    .field input {
+        width: 55%;
+        margin-left: 0.5em;
+    }
+    .formbundler {
+        justify-content: flex-start;
+    }
+    .formbundler div.field, .formbundler input {
+        margin-left: 0.5em;
+    }
 }
 
-	
-
+#twitterform{
+	padding-top: 40px;
 }
