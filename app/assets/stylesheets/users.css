@@ -1,9 +1,3 @@
-	/*.navbar-fixed-top {
-	background: black;*/
-
-/*This is what fills in background on navbar*/
-}
-
 body { padding-top: 50px;
 background-color: #F5F8FA;
 }
@@ -195,7 +189,7 @@ margin-left: -25px;
 
 	.resultsrow {
 		margin-top: 5em;
-	} 
+	}
 
 .searchform {
 	flex-direction: column;
