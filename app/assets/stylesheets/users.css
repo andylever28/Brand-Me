@@ -1,10 +1,10 @@
-	.navbar-fixed-top {
-	background: black;
+	/*.navbar-fixed-top {
+	background: black;*/
 
 /*This is what fills in background on navbar*/
 }
 
-body { padding-top: 50px; 
+body { padding-top: 50px;
 background-color: #F5F8FA;
 }
 
@@ -82,7 +82,7 @@ background-color: #F5F8FA;
 }
 #searchusername a {
 	color: #0084B4;
-	
+
 }
 
 #searchusername a:hover {
@@ -134,7 +134,7 @@ background-color: #F5F8FA;
 	background-color: white;
 }
 @media (min-width: 768px) {
-	
+
 	.toptwitter {
 		height: 7em;
 	}
@@ -208,5 +208,3 @@ margin-left: -25px;
 }
 
 }
-
-

@@ -1,16 +1,36 @@
-<h1>Log In</h1>
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <br>
-    <%= text_field_tag :email %>
+<body>
+  <div class="container" id="login-card-container">
+    <!-- <div class="card">
+      <div class="card-img-container">
+        <%= image_tag "login-collage.jpg", id: "login-top-image" %>
+      </div> -->
+
+      <div class="card col-xs-12">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        <%= image_tag "login-collage.jpg", id: "login-top-image" %>
+
+
+        <div class="card-block">
+          <h4 class="card-title">Log In</h4>
+          <p class="card-text">BLAH BLAH, SOMETHING HERE :).</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <%= form_tag sessions_path do %>
+          <li class="list-group-item">
+            <%= label_tag :email %>
+            <br>
+            <%= text_field_tag :email %>
+          </li>
+          <li class="list-group-item">
+            <%= label_tag :password %>
+            <br>
+            <%= password_field_tag :password %>
+          </li>
+          <li class="list-group-item actions">
+            <%= submit_tag "Log In" %>
+          </li>
+          <% end %>
+        </ul>
+    </div>
   </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <br>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Log In" %>
-  </div>
-<% end %>
+</body>
