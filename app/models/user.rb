@@ -22,7 +22,7 @@ class User < ApplicationRecord
   end
 
   def self.categories
-    %w(Any Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)
+    %w(Any Art Adventure Beauty Fashion Fishing Fitness Foodie Gaming Music Outdoor Pets Sports Technology Travel Wedding)
   end
 
   def self.ages
