@@ -1,36 +1,39 @@
 <div class="showamb container">
 	
 
-		<div class="row">
-			<div class="showinfoamb col-md-6">
-				<div class="row">
-					<div class="ambinfo col-xs-12">
-						<h3 class="edittips"> <%= @user.first_name %> </h3>
-						<% if @user.avatar_file_name %>
-						<%= image_tag @user.avatar.url(:medium), class: "defaultimg" %>
-						<% else %>
-						<%= image_tag("default-avatar.png", class: "defaultimg") %>
-						<% end %>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<p class="showname">
-							Contact: <%= mail_to(@user.email, name = nil) %>
-						</p>
-						<p class="showname">
-							<%= @user.category %>
-						</p>
-						<p class="showname">
-							<%= @user.summary %>
-						</p>
-					</div>
+	<div class="row">
+		<div class="showinfoamb col-md-6">
+			<div class="row">
+				<div class="ambinfo col-xs-12">
+					<h3 class="edittips"> <%= @user.first_name %> </h3>
+					<% if @user.avatar_file_name %>
+					<%= image_tag @user.avatar.url(:medium), class: "defaultimg" %>
+					<% else %>
+					<%= image_tag("default-avatar.png", class: "defaultimg") %>
+					<% end %>
 				</div>
 			</div>
-			<div class="tweetframe col-xs-12 col-md-6">
-				<div>
-					What to put here
-					</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<p class="showname">
+						Contact: <%= mail_to(@user.email, name = nil) %>
+					</p>
+					<p class="showname">
+						<%= @user.category %>
+					</p>
+					<p class="showname">
+						<%= @user.summary %>
+					</p>
 				</div>
 			</div>
 		</div>
+		<div class="tweetframe col-xs-12 col-md-6">
+			<div>
+				<h3 class="edittips"> BrandME News &amp; Updates </h3>
+			<a class="twitter-timeline" href="https://twitter.com/BrandME_App" data-height="480"
+						>Tweets by 	</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+							
+			</div>
+		</div>
+	</div>
+</div>
