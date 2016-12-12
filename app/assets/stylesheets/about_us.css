@@ -1,0 +1,59 @@
+* {
+	box-sizing: border-box;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul.nav-links{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+}
+
+footer nav ul li {
+  justify-content: center;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  font-size: 2em;
+  padding: 0.5em 0 0.5em 1em;
+  text-align: center;
+}
+
+.defaultimg {
+  padding-bottom: 1em;
+}
+
+div.name-and-such {
+text-align: center;
+font-size: 2.5em;
+}
+
+#thanks-message{
+  text-align: center;
+  padding-top: 3em;
+
+}
+
+
+.about-us-text1{
+  text-align: center;
+  font-size: 2em;
+}
+
+.about-us-text2{
+  text-align: center;
+  font-size: 1.5em;
+}
+.about-us-text3{
+  text-align: center;
+  font-size: 1em;
+}
