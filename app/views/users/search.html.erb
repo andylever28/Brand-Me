@@ -1,57 +1,57 @@
 <div class="container">
   <div class="searchrow row">
     <div class="col-md-3">
-        <%= form_tag('/users/search', method: "post") do %>
-          <div class="searchform">
-            <p>Search</p>
-            <div class="field">
-              <p> Category: 
-              <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %> </p>
-            </div>
-            <div class="field">
-              <p> Gender: 
+      <%= form_tag('/users/search', method: "post") do %>
+      <div class="searchform">
+        <p>Search</p>
+        <div class="field">
+          <p> Category: 
+            <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %> </p>
+          </div>
+          <div class="field">
+            <p> Gender: 
               <%= select_tag :gender, options_from_collection_for_select(User.genders, :to_s, :to_s)%></p>
             </div>
             <div class="field">
               <p> Age: 
-              <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%> 
+                <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%> 
               </p>
             </div>
             <div class="field">
-            <%= submit_tag("Find Talent", id: "btn", class: "login-submit-button") %>
+              <%= submit_tag("Find Talent", id: "btn", class: "login-submit-button") %>
             </div>
           </div>
-        <% end %>
-    </div><!--END col-xs-12 col-md-3-->
+          <% end %>
+        </div><!--END col-xs-12 col-md-3-->
 
-    <div class="resultscol col-md-9">
-      <div class="resultsrow row">
-      <% if !@users.empty? %>
-        <% @users.each do |user| %>
-          <% if user.twitter_datum.first %>
+        <div class="resultscol col-md-9">
+          <div class="resultsrow row">
+            <% if !@users.empty? %>
+            <% @users.each do |user| %>
+            <% if user.twitter_datum.first %>
             <div class="searchimgdiv col-sm-4">
               <% if user.avatar_file_name %>
-                <%= image_tag user.avatar.url(:medium), class: "searchimg" %> 
+              <%= image_tag user.avatar.url(:medium), class: "searchimg" %> 
               <% else %>
-                <%= image_tag("default-avatar.png", class: "searchimg") %>
+              <%= image_tag("default-avatar.png", class: "searchimg") %>
               <% end %>       
             </div>
             <div class="searchinfo col-sm-8">  
               <p id="searchusername"> <%= user.first_name %> || <%= user.gender %> - <%= user.age %> - <%= user.category %> || <%= link_to 'View', user %> </p>
-                  <% user.twitter_datum.each do |twitter| %>
-                    <p id="searchtwitterinfo"> <%= number_with_delimiter(twitter.followers_count) %> Followers </p>
-                  <% end %>
+              <% user.twitter_datum.each do |twitter| %>
+              <p id="searchtwitterinfo"> <%= number_with_delimiter(twitter.followers_count) %> Followers </p>
+              <% end %>
             </div>
-          <% end %>
-        <% end %>
-      <% else %>
-        <div class="nosearch col-xs-12">
-          <p id="nosearchres"> Search Results will return here. If you do not see results, please alter your search </p>
-        </div>
-      <% end %>
-      </div>
-    </div> <!-- End row -->
-  </div> <!-- End col-md-9 -->
-</div><!--END CONTAINER-->
+            <% end %>
+            <% end %>
+            <% else %>
+            <div class="nosearch col-xs-12">
+              <p id="nosearchres"> Search Results will return here. If you do not see results, please alter your search </p>
+            </div>
+            <% end %>
+          </div>
+        </div> <!-- End row -->
+      </div> <!-- End col-md-9 -->
+    </div><!--END CONTAINER-->
 
 
