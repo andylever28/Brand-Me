@@ -10,7 +10,7 @@
 				<% end %>
 				<% else %>
 				<% @user.twitter_datum.each do |twit| %>
-				<p id="showtwitterstats"> <%= image_tag("twitter-logo.png", id: "twitterlogo") %> <%= @user.first_name %> || @<%= twit.screen_name %> <br> <%= twit.followers_count %> Followers || <%= twit.statuses_count %> Tweets</p>
+				<p id="showtwitterstats"> <%= image_tag("twitter-logo.png", id: "twitterlogo") %> <%= @user.first_name %> || @<%= twit.screen_name %> <br> <%= number_with_delimiter(twit.followers_count) %>  Followers || <%= number_with_delimiter(twit.statuses_count) %> Tweets</p>
 				<% end %>
 				<% end %>
 			</div>
