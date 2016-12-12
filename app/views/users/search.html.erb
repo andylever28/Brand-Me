@@ -5,19 +5,20 @@
           <div class="searchform">
             <p>Search</p>
             <div class="field">
-              <strong> Category: </strong>
-              <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %>
+              <p> Category: 
+              <%= select_tag :category, options_from_collection_for_select(User.categories, :to_s, :to_s) %> </p>
             </div>
             <div class="field">
-              <strong> Gender: </strong>
-              <%= select_tag :gender, options_from_collection_for_select(User.genders, :to_s, :to_s)%>
+              <p> Gender: 
+              <%= select_tag :gender, options_from_collection_for_select(User.genders, :to_s, :to_s)%></p>
             </div>
             <div class="field">
-              <strong> Age: </strong>
-              <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%>
+              <p> Age: 
+              <%= select_tag :age, options_from_collection_for_select(User.ages, :to_s, :to_s)%> 
+              </p>
             </div>
             <div class="field">
-            <%= submit_tag("Find Talent", id: "btn") %>
+            <%= submit_tag("Find Talent", id: "btn", class: "login-submit-button") %>
             </div>
           </div>
         <% end %>

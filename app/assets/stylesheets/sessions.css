@@ -1,6 +1,6 @@
 .signupform {
     background-color: white;
-    margin-top: 3em;
+    margin-top: 0em;
     box-shadow: 0 5px 5px -5px #333;
 }
 
@@ -9,9 +9,14 @@
 }
 
 h1.signup {
-    text-align: center;
+    text-align: left;
     font-size: 2.5em;
     margin: 1em 0em;
+}
+
+h2.errors {
+    font-size: 1.5em;
+    color: red;
 }
 
 div.field {
@@ -34,6 +39,7 @@ div.field {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 0.5em;
 }
 
 .formbundler div.field {
@@ -47,6 +53,15 @@ div.field {
     font-size: 1.2em;
 }
 
+.oppositekindlink a {
+    color: #1dcaff;
+
+}
+
+.oppositekindlink a:hover {
+    color: black;
+    text-decoration: underline;
+}
 .signupinfo {
     font-family: "Muli", sans-serif;
     font-weight: bold;
@@ -68,7 +83,24 @@ div.field {
     margin-top: 1.5em;
 }
 
-@media (min-width: 768px) {}
+#ambinput {
+    font-size: 1.2em;
+}
+
+#brandinput {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+}
+
+
+
+@media (min-width: 768px) {
+
+#brandinput {
+    font-size: 1.2em;
+    }
+}
+
 
 @media (min-width: 900px) {
     .signupform {
@@ -84,6 +116,20 @@ div.field {
     .formbundler div.field, .formbundler input {
         margin-left: 0.5em;
     }
+    .formbundler input {
+        margin-top: 2.2em;
+    }
+
+    #ambinput {
+        margin-top: -1em;
+        width: 7em;
+    }
+
+    #brandinput {
+        margin-top: 1.5em;
+        width: 7em;
+    }
+    
 }
 
 #twitterform{

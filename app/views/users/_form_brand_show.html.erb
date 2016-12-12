@@ -1,13 +1,35 @@
- <p> <strong>
-  <%= @user.first_name %> - <%= @user.category %>
-</strong>
-</p>
+<div class="showamb container">
+	
 
-<p>
-  <%= mail_to(@user.email, name = nil) %>
-</p>
-
-	<p> <%= image_tag @user.avatar.url(:medium) %> </p>
-<p>
-  <%= @user.summary %>
-</p>
+		<div class="row">
+			<div class="showinfoamb col-md-6">
+				<div class="row">
+					<div class="ambinfo col-xs-12">
+						<% if @user.avatar_file_name %>
+						<%= image_tag @user.avatar.url(:medium), class: "defaultimg" %>
+						<% else %>
+						<%= image_tag("default-avatar.png", class: "defaultimg") %>
+						<% end %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<p class="showname">
+							Contact: <%= mail_to(@user.email, name = nil) %>
+						</p>
+						<p class="showname">
+							<%= @user.gender %> - <%= @user.age %> years old - <%= @user.category %>
+						</p>
+						<p class="showname">
+							<%= @user.summary %>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="tweetframe col-xs-12 col-md-6">
+				<div>
+					What to put here
+					</div>
+				</div>
+			</div>
+		</div>

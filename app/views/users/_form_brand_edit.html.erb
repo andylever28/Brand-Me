@@ -1,39 +1,54 @@
+<div class="container">
+  <div class="signupform row"> <!-- Beginrow -->
+    <div class="signupcol col-sm-6"> <!-- Begin signup form -->
+        
 <%= form_for(user, html: { multipart: true } )  do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-
-    <ul>
-        <% user.errors.full_messages.each do |message| %>
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  <p> Brand </p>
 
-   <div class="field">
-    <%= f.label :company_image %>
+  <div class="field">
+    <%= f.label :profile_image %>
     <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
-    <%= f.label :company_name %>
-    <%= f.text_field :first_name %>
-</div>
+    <p> <%= f.label :brand_name %> </p>
+    <%= f.text_area :first_name, :size => "30x1" %>
+  </div>
 
-<div class="field">
+  <div class="field">
+    <p> <%= f.label :add_a_bio %> </p>    
+    <%= f.text_area :summary, :size=>"30x4", placeholder: "Summary can be a max length of 140 characters", :maxlength=>"140" %>
+  </div>
+  <div class="formbundler">
+  <div class="field">
     <%= f.label :category %>
-    <%= f.text_field :category %>
-</div>
+    <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)%>
+  </div>  
 
-<div class="field">
-    <%= f.label :summary %>
-    <%= f.text_area :summary %>
-</div>
-
-<div class="actions">
-    <%= f.submit %>
-</div>
+  <div class="actions">
+    <%= f.submit "Update", class: "login-submit-button", id:"brandeditbutton" %>
+  </div>
+  </div>
 <% end %>
+    </div> <!-- End form -->
+        <div class="signupcol col-sm-6"> <!-- signup info -->
+            <h3 class="edittips"> Tips for profile </h3>
+              <ul>
+                <li> Add a company image </li>
+                <li> Link to company website in your bio </li>
+                <li> Make sure your category represents your brand </li>
+              </ul>
+            <%= image_tag "edit-prof.png", id: "edit-prof"%>
+        </div> <!-- end info-->
+</div> <!-- end row -->
+</div> <!--end container -->

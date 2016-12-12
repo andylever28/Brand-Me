@@ -38,6 +38,8 @@ background-color: #F5F8FA;
 	color: black;
 	font-size: 1em;
 	font-weight: bold;
+	font-family: "Muli", sans-serif;
+	font-size: 1.2em;
 }
 
 .resultscol {
@@ -125,8 +127,13 @@ background-color: #F5F8FA;
 	flex-direction: row;
 	justify-content: space-around;
 	padding: 0.3em;
-	height: 5em;
+	height: 8em;
 	background-color: white;
+}
+
+#edit-prof {
+	width: 90%;
+	margin-left: 5%;
 }
 @media (min-width: 768px) {
 
@@ -194,7 +201,7 @@ margin-left: -25px;
 .searchform {
 	flex-direction: column;
 	position: fixed;
-	margin-top: 5em;
+	margin-top: 6em;
 	}
 
 .container {
@@ -203,7 +210,7 @@ margin-left: -25px;
 
 .showinfoamb,
 .tweetframe {
-	height: 600px;
+	height: 550px;
 }
 
 }

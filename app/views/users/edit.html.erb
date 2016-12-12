@@ -1,6 +1,5 @@
 <% if @user == @current_user %>
-  <h1>Edit Profile</h1>
-  <% if @current_user.kind == "Brand" %>
+	  <% if @current_user.kind == "Brand" %>
     <%= render 'form_brand_edit', user: @user %>
   <% else %>
     <%= render 'form_ambass_edit', user: @user %>

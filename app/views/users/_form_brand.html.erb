@@ -8,7 +8,7 @@
       <%= form_for(user) do |f| %>
       <% if user.errors.any? %>
       <div id="error_explanation">
-        <h3><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h3>
+        <h2 class="errors"><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h3>
 
         <ul>
           <% user.errors.full_messages.each do |message| %>
@@ -21,7 +21,7 @@
         <% if params[:kind] != nil %>
           <% session[:kind] = params[:kind] %>
         <%end%>
-          <%= session[:kind] %> <br>Sign Up
+          <%= session[:kind] %> Sign Up
       </h1>
 
         <div class="field">
@@ -50,7 +50,7 @@
     <%= f.hidden_field(:gender, :value => "X")%>
 
         <div class="brandactions">
-          <%= f.submit "Sign up!" %>
+          <%= f.submit "Sign up!", class: "login-submit-button", id: "brandinput"%>
         </div>
        </div>
         <p class="oppositekindlink"> <%= link_to "Click here for an Ambassador account.", :controller => "users", :action => "new", :kind => "Ambassador" %>  </p>

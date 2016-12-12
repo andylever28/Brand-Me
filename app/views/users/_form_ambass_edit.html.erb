@@ -1,3 +1,9 @@
+
+
+<div class="container">
+  <div class="signupform row"> <!-- Beginrow -->
+    <div class="signupcol col-sm-6"> <!-- Begin signup form -->
+
 <%= form_for(user, html: { multipart: true } )  do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -10,36 +16,45 @@
       </ul>
     </div>
   <% end %>
-  <p> Amb </p>
+
   <div class="field">
     <%= f.label :profile_image %>
     <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
-    <%= f.label :first_name %>
+   <p> <%= f.label :name %> </p>
     <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+   <p> <%= f.label :summary %> </p>
+    <%= f.text_area :summary, :size=>"40x3", placeholder: "Summary can be a max length of 140 characters", :maxlength=>"140" %>
   </div>
-
+  <div class="formbundler">
   <div class="field">
-    <%= f.label :summary %>
-    <%= f.text_area :summary, :size=>"60x3", placeholder: "Summary can be a max length of 140 characters", :maxlength=>"140" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :category %>
+    <p> <%= f.label :category %> </p>
     <%= f.select :category, %w(Art Adventure Beauty Blogger Business Comedy Dads DIY Entrepreneur Fashion Family Fitness Foodie Gaming Home Kids Lifestyle Modeling Moms Motivation Movies Music Outdoor Pets Photography Politics Sports Technology Travel Wedding)%>
   </div>  
   <div class="field">
-    <%= f.label :age  %>
+    <p> <%= f.label :age  %> </p>
     <%= f.select :age, %w(Under\ 25 26-35 36-45 46-55 55+)%>
     </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update", class: "login-submit-button" %>
+  </div>
   </div>
 <% end %>
+    </div> <!-- End form -->
+        <div class="signupcol col-sm-6"> <!-- signup info -->
+ <h3 class="edittips"> Tips for profile </h3>
+              <ul>
+                <li> Add a clear profile image</li>
+                <li> Make your bio stand out. This is a chance to sell yourself. </li>
+                <li> Pick a category that best suits what you represent, and the type of brands you want to work with. </li>
+              </ul>
+            <%= image_tag "edit-prof.png", id: "edit-prof"%>        </div> <!-- end info-->
+</div> <!-- end row -->
+</div> <!--end container -->
+
+

@@ -1,4 +1,8 @@
-<% if params[:kind] == "Brand" %>
+<% if params[:kind] != nil %>
+   <% session[:kind] = params[:kind] %>
+<%end%>
+
+<% if params[:kind] == "Brand" || session[:kind] == "Brand" %>
   <%= render 'form_brand', user: @user %> <!-- #renders if user signup is for Brand -->
 <% else %>
   <%= render 'form_amb', user: @user %> <!-- #renders if user signup is for Brand -->

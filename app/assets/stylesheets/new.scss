@@ -1,6 +1,4 @@
-body {
-    background-color: #65CCEF;
-}
+
 
 .signinform {
     background-color: white;
@@ -21,29 +19,13 @@ h1.signin {
 #login-top-image {
     width: 100%;
     color: #1dcaff;
+    border-radius: 7px;
 }
 
 .field input {
     width: 80%;
     margin-left: 10%;
     margin-bottom: 1em;
-}
-
-.formbundler {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-.formbundler div.field {
-    width: 22%;
-    margin-left: 1em;
-    margin-bottom: 1em;
-}
-
-.oppositekindlink {
-    margin-left: 1em;
-    font-size: 1.2em;
 }
 
 .signininfo {
@@ -54,14 +36,15 @@ h1.signin {
     color: #65CCEF;
 }
 
-.formbundler a {
-    color: #1dcaff;
+#brandeditbutton {
+    margin-top: 1.5em;
+    font-size: 1.5em;
 }
 
-.formbundler a:hover {
-    color: black;
-    text-decoration: underline;
+.edittips {
+    text-align: center;
 }
+
 @media (min-width: 768px) {}
 @media (min-width: 900px) {
     .signinform {
@@ -72,9 +55,8 @@ h1.signin {
         margin-top: 1.5em;
     }
 
-    .field input {
-        width: 55%;
-        margin-left: 0.5em;
+    #brandeditbutton {
+        margin-top: 1em;
     }
 
     .formbundler {
@@ -87,7 +69,7 @@ h1.signin {
     }
 
     .signincol {
-        height: 100vh;
+        height: 550px;
     }
 }
 
