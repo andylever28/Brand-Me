@@ -4,13 +4,6 @@ before_action :authorize, except: [:create, :new, :twitter]
 # GET /users
 # GET /users.json
 def index
-  # @social = TwitterDatum.all.order(followers_count: :desc)
-  # @users = []
-  # @social.each do |stat|
-  #   @users << User.find(stat.user_id)
-  # end
-
-  # puts @users
   @users = User.includes(:twitter_datum).order('twitter_data.followers_count')
 end
 
